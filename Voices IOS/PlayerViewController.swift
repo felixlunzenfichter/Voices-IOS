@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class PlayerViewController: UIViewController {
 
@@ -15,12 +16,20 @@ class PlayerViewController: UIViewController {
     @IBOutlet var pause: UIButton!
     @IBOutlet var textLabel: UILabel!
     
+    
+    
     var path: String!
     
     
+    fileprivate func initializePathLabel() {
+        textLabel.text = path
+        textLabel.numberOfLines = 0
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        initializePathLabel()
         // Do any additional setup after loading the view.
     }
     

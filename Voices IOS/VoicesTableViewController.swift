@@ -14,18 +14,18 @@ class VoicesTableViewController: UITableViewController {
     
     // MARK: - Properties
     var voices : [String]!
-
+    var chosenVoice : String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         voices = getListOfVoices()
 
         // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+         self.clearsSelectionOnViewWillAppear = true
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+//         self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -55,8 +55,29 @@ class VoicesTableViewController: UITableViewController {
     }
     
     
+    // MARK: - Navigation
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        chosenVoice = voices[indexPath.row]
+        
+        if let playWindow = storyboard?.instantiateViewController(identifier: "PlayWindow") as? PlayerViewController {
+            playWindow.path = chosenVoice
+            navigationController?.pushViewController(playWindow, animated: true)
+        }
+    }
     
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        unselectRow(animated)
+    }
+    
+    fileprivate func unselectRow(_ animated: Bool) {
+        if let selectedIndexPath = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: selectedIndexPath, animated: animated)
+        }
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -92,19 +113,9 @@ class VoicesTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
     
     // MARK:- Private Methods
-    
-
     
     func getListOfVoices() -> [String] {
         let fileManager = FileManager.default

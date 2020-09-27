@@ -7,11 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		734687D125163A4800A9B6A7 /* VoiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734687D025163A4800A9B6A7 /* VoiceTableViewCell.swift */; };
+		7340F6C9251E451C006ABA84 /* VoiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734687D025163A4800A9B6A7 /* VoiceTableViewCell.swift */; };
 		734687D32516433500A9B6A7 /* VoicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734687D22516433500A9B6A7 /* VoicesTableViewController.swift */; };
 		734687D72517B79200A9B6A7 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734687D62517B79200A9B6A7 /* PlayerViewController.swift */; };
-		734687D92517BA9100A9B6A7 /* SuperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734687D82517BA9100A9B6A7 /* SuperViewController.swift */; };
-		734687DC251A124700A9B6A7 /* Drafts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 734687DB251A124700A9B6A7 /* Drafts.storyboard */; };
 		73DCFD9A251126F0000AD100 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DCFD99251126F0000AD100 /* AppDelegate.swift */; };
 		73DCFD9C251126F0000AD100 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DCFD9B251126F0000AD100 /* SceneDelegate.swift */; };
 		73DCFD9E251126F0000AD100 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DCFD9D251126F0000AD100 /* ViewController.swift */; };
@@ -24,8 +22,6 @@
 		734687D025163A4800A9B6A7 /* VoiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceTableViewCell.swift; sourceTree = "<group>"; };
 		734687D22516433500A9B6A7 /* VoicesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicesTableViewController.swift; sourceTree = "<group>"; };
 		734687D62517B79200A9B6A7 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
-		734687D82517BA9100A9B6A7 /* SuperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperViewController.swift; sourceTree = "<group>"; };
-		734687DB251A124700A9B6A7 /* Drafts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Drafts.storyboard; sourceTree = "<group>"; };
 		73DCFD96251126F0000AD100 /* Voices IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Voices IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73DCFD99251126F0000AD100 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73DCFD9B251126F0000AD100 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,7 +46,6 @@
 		734687DA2517E5C900A9B6A7 /* seperate view controllers  */ = {
 			isa = PBXGroup;
 			children = (
-				734687D025163A4800A9B6A7 /* VoiceTableViewCell.swift */,
 			);
 			path = "seperate view controllers ";
 			sourceTree = "<group>";
@@ -78,12 +73,11 @@
 				73DCFD99251126F0000AD100 /* AppDelegate.swift */,
 				73DCFD9B251126F0000AD100 /* SceneDelegate.swift */,
 				73DCFD9D251126F0000AD100 /* ViewController.swift */,
-				734687D82517BA9100A9B6A7 /* SuperViewController.swift */,
 				73DCFDA4251126F1000AD100 /* LaunchScreen.storyboard */,
-				734687D62517B79200A9B6A7 /* PlayerViewController.swift */,
 				734687D22516433500A9B6A7 /* VoicesTableViewController.swift */,
+				734687D025163A4800A9B6A7 /* VoiceTableViewCell.swift */,
+				734687D62517B79200A9B6A7 /* PlayerViewController.swift */,
 				73DCFD9F251126F0000AD100 /* Main.storyboard */,
-				734687DB251A124700A9B6A7 /* Drafts.storyboard */,
 				73DCFDA2251126F1000AD100 /* Assets.xcassets */,
 				73DCFDA7251126F1000AD100 /* Info.plist */,
 			);
@@ -151,7 +145,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				734687DC251A124700A9B6A7 /* Drafts.storyboard in Resources */,
 				73DCFDA6251126F1000AD100 /* LaunchScreen.storyboard in Resources */,
 				73DCFDA3251126F1000AD100 /* Assets.xcassets in Resources */,
 				73DCFDA1251126F0000AD100 /* Main.storyboard in Resources */,
@@ -165,12 +158,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				734687D125163A4800A9B6A7 /* VoiceTableViewCell.swift in Sources */,
+				7340F6C9251E451C006ABA84 /* VoiceTableViewCell.swift in Sources */,
 				73DCFD9E251126F0000AD100 /* ViewController.swift in Sources */,
 				73DCFD9A251126F0000AD100 /* AppDelegate.swift in Sources */,
 				73DCFD9C251126F0000AD100 /* SceneDelegate.swift in Sources */,
 				734687D32516433500A9B6A7 /* VoicesTableViewController.swift in Sources */,
-				734687D92517BA9100A9B6A7 /* SuperViewController.swift in Sources */,
 				734687D72517B79200A9B6A7 /* PlayerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
