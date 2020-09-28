@@ -10,6 +10,7 @@
 		7340F6C9251E451C006ABA84 /* VoiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734687D025163A4800A9B6A7 /* VoiceTableViewCell.swift */; };
 		734687D32516433500A9B6A7 /* VoicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734687D22516433500A9B6A7 /* VoicesTableViewController.swift */; };
 		734687D72517B79200A9B6A7 /* ListeningToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734687D62517B79200A9B6A7 /* ListeningToolViewController.swift */; };
+		7374CBA52521F6D3008FC2F5 /* RecorderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7374CBA42521F6D3008FC2F5 /* RecorderViewController.swift */; };
 		73DCFD9A251126F0000AD100 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DCFD99251126F0000AD100 /* AppDelegate.swift */; };
 		73DCFD9C251126F0000AD100 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DCFD9B251126F0000AD100 /* SceneDelegate.swift */; };
 		73DCFD9E251126F0000AD100 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DCFD9D251126F0000AD100 /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 		734687D025163A4800A9B6A7 /* VoiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceTableViewCell.swift; sourceTree = "<group>"; };
 		734687D22516433500A9B6A7 /* VoicesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicesTableViewController.swift; sourceTree = "<group>"; };
 		734687D62517B79200A9B6A7 /* ListeningToolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeningToolViewController.swift; sourceTree = "<group>"; };
+		7374CBA42521F6D3008FC2F5 /* RecorderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderViewController.swift; sourceTree = "<group>"; };
 		73DCFD96251126F0000AD100 /* Voices IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Voices IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73DCFD99251126F0000AD100 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73DCFD9B251126F0000AD100 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,14 +74,15 @@
 				734687DA2517E5C900A9B6A7 /* seperate view controllers  */,
 				73DCFD99251126F0000AD100 /* AppDelegate.swift */,
 				73DCFD9B251126F0000AD100 /* SceneDelegate.swift */,
-				73DCFD9D251126F0000AD100 /* ViewController.swift */,
-				73DCFDA4251126F1000AD100 /* LaunchScreen.storyboard */,
+				73DCFD9F251126F0000AD100 /* Main.storyboard */,
 				734687D22516433500A9B6A7 /* VoicesTableViewController.swift */,
 				734687D025163A4800A9B6A7 /* VoiceTableViewCell.swift */,
 				734687D62517B79200A9B6A7 /* ListeningToolViewController.swift */,
-				73DCFD9F251126F0000AD100 /* Main.storyboard */,
+				7374CBA42521F6D3008FC2F5 /* RecorderViewController.swift */,
 				73DCFDA2251126F1000AD100 /* Assets.xcassets */,
 				73DCFDA7251126F1000AD100 /* Info.plist */,
+				73DCFDA4251126F1000AD100 /* LaunchScreen.storyboard */,
+				73DCFD9D251126F0000AD100 /* ViewController.swift */,
 			);
 			path = "Voices IOS";
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 				73DCFD9C251126F0000AD100 /* SceneDelegate.swift in Sources */,
 				734687D32516433500A9B6A7 /* VoicesTableViewController.swift in Sources */,
 				734687D72517B79200A9B6A7 /* ListeningToolViewController.swift in Sources */,
+				7374CBA52521F6D3008FC2F5 /* RecorderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

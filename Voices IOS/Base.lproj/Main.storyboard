@@ -263,13 +263,33 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Voices" id="Zbm-Dz-9pb">
-                        <barButtonItem key="rightBarButtonItem" title="Record new Voice" id="fKg-aU-72k"/>
+                        <barButtonItem key="rightBarButtonItem" title="Record new Voice" id="fKg-aU-72k">
+                            <connections>
+                                <segue destination="X8F-EP-YIf" kind="show" id="FkO-Ue-IdO"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lii-4O-aHb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="298.55072463768118" y="2088.6160714285716"/>
+        </scene>
+        <!--Recording-->
+        <scene sceneID="bDe-6a-gSH">
+            <objects>
+                <viewController id="X8F-EP-YIf" customClass="RecorderViewController" customModule="Voices_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FS1-ET-lUn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="420-qp-RIW"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Recording" id="W3m-LO-3sK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CNh-JD-hMm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-107" y="2871"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="W7v-t3-1ei">
@@ -330,7 +350,7 @@
             </objects>
             <point key="canvasLocation" x="3551" y="1357"/>
         </scene>
-        <!--Listening Tool View Controller-->
+        <!--Listening-->
         <scene sceneID="QJ3-xi-GVY">
             <objects>
                 <viewController storyboardIdentifier="PlayWindow" id="1N9-po-06I" customClass="ListeningToolViewController" customModule="Voices_IOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -355,8 +375,8 @@
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="FaP-GC-HuJ">
                                 <rect key="frame" x="30" y="599" width="354" height="2"/>
                             </progressView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyd-ti-orb" userLabel="Time Info">
-                                <rect key="frame" x="352" y="611" width="23" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyd-ti-orb" userLabel="Time Info">
+                                <rect key="frame" x="341" y="611" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -379,7 +399,7 @@
                         <viewLayoutGuide key="safeArea" id="ucT-Sb-xnE"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="HHP-fd-hTe"/>
+                    <navigationItem key="navigationItem" title="Listening" id="HHP-fd-hTe"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="listeningProgressBar" destination="FaP-GC-HuJ" id="wsM-lU-U2T"/>
@@ -390,7 +410,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tSM-xb-zjK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1189.8550724637682" y="2088.6160714285716"/>
+            <point key="canvasLocation" x="694" y="2871"/>
         </scene>
         <!--Control Panel Controller-->
         <scene sceneID="gYC-Ak-rsu">
