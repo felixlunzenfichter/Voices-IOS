@@ -339,7 +339,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lm2-ck-Rwc">
-                                <rect key="frame" x="96" y="692" width="30" height="30"/>
+                                <rect key="frame" x="96" y="690" width="30" height="32"/>
                                 <state key="normal" title="play"/>
                                 <connections>
                                     <action selector="playButtonPushed:" destination="1N9-po-06I" eventType="touchUpInside" id="cTa-vi-VNe"/>
@@ -352,27 +352,27 @@
                                     <action selector="pauseButtonPushed:" destination="1N9-po-06I" eventType="touchUpInside" id="ntM-jl-4El"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyf-1w-S29" userLabel="Info">
-                                <rect key="frame" x="20" y="551" width="374" height="0.0"/>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="FaP-GC-HuJ">
+                                <rect key="frame" x="30" y="599" width="354" height="2"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyd-ti-orb" userLabel="Time Info">
+                                <rect key="frame" x="352" y="611" width="23" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="FaP-GC-HuJ">
-                                <rect key="frame" x="30" y="601" width="354" height="2"/>
-                            </progressView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="ucT-Sb-xnE" firstAttribute="bottom" secondItem="b4H-j3-moH" secondAttribute="bottom" constant="91" id="1Gj-TK-Y3G"/>
                             <constraint firstItem="lm2-ck-Rwc" firstAttribute="top" secondItem="FaP-GC-HuJ" secondAttribute="bottom" constant="89" id="2pR-Lo-1dI"/>
-                            <constraint firstItem="hyf-1w-S29" firstAttribute="leading" secondItem="ucT-Sb-xnE" secondAttribute="leading" constant="20" id="I8R-A4-KEu"/>
+                            <constraint firstItem="ucT-Sb-xnE" firstAttribute="bottom" secondItem="cyd-ti-orb" secondAttribute="bottom" constant="181" id="564-tk-YGX"/>
+                            <constraint firstItem="ucT-Sb-xnE" firstAttribute="trailing" secondItem="cyd-ti-orb" secondAttribute="trailing" constant="39" id="Gaa-tP-eub"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FaP-GC-HuJ" secondAttribute="trailing" constant="10" id="JfP-mk-bfc"/>
                             <constraint firstItem="ucT-Sb-xnE" firstAttribute="bottom" secondItem="lm2-ck-Rwc" secondAttribute="bottom" constant="91" id="Tfv-JU-EjK"/>
-                            <constraint firstItem="ucT-Sb-xnE" firstAttribute="trailing" secondItem="hyf-1w-S29" secondAttribute="trailing" constant="20" id="gdc-7Y-bCt"/>
+                            <constraint firstItem="cyd-ti-orb" firstAttribute="top" secondItem="FaP-GC-HuJ" secondAttribute="bottom" constant="10" id="ZBe-fA-b2R"/>
                             <constraint firstItem="FaP-GC-HuJ" firstAttribute="leading" secondItem="lUO-Am-5W6" secondAttribute="leadingMargin" constant="10" id="mXy-Vt-cib"/>
                             <constraint firstItem="b4H-j3-moH" firstAttribute="leading" secondItem="lm2-ck-Rwc" secondAttribute="trailing" constant="145" id="sRh-6O-XMY"/>
-                            <constraint firstItem="FaP-GC-HuJ" firstAttribute="top" secondItem="hyf-1w-S29" secondAttribute="bottom" constant="50" id="spl-LB-aDe"/>
                             <constraint firstItem="b4H-j3-moH" firstAttribute="leading" secondItem="lm2-ck-Rwc" secondAttribute="trailing" constant="145" id="vaj-i6-10n"/>
                             <constraint firstItem="lm2-ck-Rwc" firstAttribute="leading" secondItem="ucT-Sb-xnE" secondAttribute="leading" constant="96" id="zeZ-J1-JKQ"/>
                         </constraints>
@@ -385,7 +385,7 @@
                         <outlet property="listeningProgressBar" destination="FaP-GC-HuJ" id="wsM-lU-U2T"/>
                         <outlet property="pause" destination="b4H-j3-moH" id="Kvg-VM-kJO"/>
                         <outlet property="play" destination="lm2-ck-Rwc" id="fPk-OR-xpZ"/>
-                        <outlet property="textLabel" destination="hyf-1w-S29" id="Zsq-Ul-b4U"/>
+                        <outlet property="timeInfo" destination="cyd-ti-orb" id="jfb-Cw-ywD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tSM-xb-zjK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

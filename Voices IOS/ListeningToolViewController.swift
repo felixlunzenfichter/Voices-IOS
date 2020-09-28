@@ -16,8 +16,10 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet var listeningProgressBar: UIProgressView!
     @IBOutlet var play: UIButton!
     @IBOutlet var pause: UIButton!
-    @IBOutlet var textLabel: UILabel!
+    @IBOutlet var timeInfo: UILabel!
+    
     var voicePath: String!
+    var duration: Double = 0.0
     
     var updater : CADisplayLink!
     
@@ -29,9 +31,9 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate {
         
         setUpAudioSession()
         initAudioPlayer()
-        initializePathLabel()
-
-        // Do any additional setup after loading the view.
+        duration = (audioPlayer.duration * 10).rounded() / 10
+        initTimeInfo()
+        listeningProgressBar.progress = 0.0
     }
     
     // MARK: - setup
@@ -41,7 +43,7 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate {
             audioPlayer = try AVAudioPlayer(contentsOf: audioFilename)
             audioPlayer.delegate = self
         } catch {
-            // catching dick
+            print(error)
         }
     }
     
@@ -53,7 +55,6 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate {
         } catch {
             // Problemo
         }
-        
     }
     
     func permissionBlock(permissionGranded: Bool) {
@@ -67,10 +68,8 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate {
         }
     }
     
-    fileprivate func initializePathLabel() {
-        let duration: Double = (audioPlayer.duration * 10).rounded() / 10
-        textLabel.text = "length of Voice: \(duration) seconds"
-        textLabel.numberOfLines = 0
+    fileprivate func initTimeInfo() {
+        timeInfo.text = "0/\(duration)"
     }
     
     
@@ -88,11 +87,21 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     @objc func musicProgress()  {
-        let normalizedTime = Float(self.audioPlayer!.currentTime / (self.audioPlayer!.duration) )
-        self.listeningProgressBar.progress = normalizedTime
-        print(normalizedTime)
+        updateProgressBar()
+        updateTimeInfo()
     }
     
+    fileprivate func updateProgressBar() {
+        let normalizedTime = Float(self.audioPlayer!.currentTime / (self.audioPlayer!.duration) )
+        self.listeningProgressBar.progress = normalizedTime
+    }
+    
+    fileprivate func updateTimeInfo () {
+        let time : Double = audioPlayer.currentTime
+        let roundedTime = (time * 10).rounded() / 10
+        timeInfo.text = "\(roundedTime)/\(duration)"
+    }
+
 
 
     /*
