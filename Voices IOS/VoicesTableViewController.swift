@@ -23,9 +23,6 @@ class VoicesTableViewController: UITableViewController {
 
         // Uncomment the following line to preserve selection between presentations
          self.clearsSelectionOnViewWillAppear = true
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-//         self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -38,30 +35,34 @@ class VoicesTableViewController: UITableViewController {
         return voices.count
     }
 
-    
+
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "VoiceTableViewCell"
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? VoiceTableViewCell else {
-            fatalError("Unwrapping of VoiceTableViewCell failed.")
-        }
+        let cell : VoiceTableViewCell = getVoiceCell(tableView, indexPath)
+        initializeVoiceCell(cell, indexPath)
         
-        cell.title.text = String(voices[indexPath.row].suffix(23).prefix(19))
-        cell.path = voices[indexPath.row]
-
-        // Configure the cell...
-
         return cell
     }
     
+    fileprivate func getVoiceCell( _ tableView: UITableView, _ indexPath: IndexPath) -> VoiceTableViewCell{
+        let cellIdentifier = "VoiceTableViewCell"
+        return tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? VoiceTableViewCell ?? VoiceTableViewCell()
+    }
+    
+    fileprivate func initializeVoiceCell(_ cell: VoiceTableViewCell, _ indexPath: IndexPath) {
+        let timeStamp: String = String(voices[indexPath.row].suffix(23).prefix(19))
+        cell.title.text = timeStamp
+        cell.path = voices[indexPath.row]
+    }
     
     // MARK: - Navigation
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         chosenVoice = voices[indexPath.row]
         
-        if let playWindow = storyboard?.instantiateViewController(identifier: "PlayWindow") as? PlayerViewController {
-            playWindow.path = chosenVoice
+        if let playWindow = storyboard?.instantiateViewController(identifier: "PlayWindow") as? ListeningToolViewController {
+            playWindow.voicePath = chosenVoice
             navigationController?.pushViewController(playWindow, animated: true)
         }
     }
