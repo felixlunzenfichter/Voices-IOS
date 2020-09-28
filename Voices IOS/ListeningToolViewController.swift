@@ -50,10 +50,10 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate {
     fileprivate func setUpAudioSession() {
         do {
             try audioSession.setCategory(.playback, mode: .default)
+            try audioSession.setMode(.spokenAudio)
             try audioSession.setActive(true)
-//            audioSession.requestRecordPermission(permissionBlock(permissionGranded:))
         } catch {
-            // Problemo
+            print(error)
         }
     }
     
