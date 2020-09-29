@@ -13,7 +13,7 @@ class VoiceTableViewCell: UITableViewCell, AVAudioPlayerDelegate {
     
     // MARK: - Properties
     @IBOutlet var title: UITextField!
-    var path : String!
+    var path : URL!
     
 
     override func awakeFromNib() {

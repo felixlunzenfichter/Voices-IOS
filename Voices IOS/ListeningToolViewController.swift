@@ -20,7 +20,7 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate, SFSp
     @IBOutlet var timeInfo: UILabel!
     @IBOutlet var transcription: UILabel!
     
-    var voicePath: String!
+    var voicePath: URL!
     var duration: Double = 0.0
     
     var updater : CADisplayLink!
@@ -38,11 +38,8 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate, SFSp
         setDuration()
         initTimeInfo()
         listeningProgressBar.progress = 0.0
-        
         transcription.numberOfLines = 0
-        print("transcribe")
-        recognizeFile(url: NSURL(fileURLWithPath: voicePath))
-        print("done")
+        recognizeFile(url: NSURL(fileURLWithPath: voicePath.absoluteString))
         
     }
     
@@ -64,7 +61,7 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate, SFSp
        }
         
 
-       let request = SFSpeechURLRecognitionRequest(url: URL(fileURLWithPath: voicePath))
+       let request = SFSpeechURLRecognitionRequest(url:voicePath)
         
         myRecognizer.recognitionTask(with: request) { (result, error) in
             guard let result = result else {
@@ -85,7 +82,7 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate, SFSp
 
     // MARK: - setup
     fileprivate func initAudioPlayer() {
-        let audioFilename : URL = URL(fileURLWithPath: voicePath)
+        let audioFilename : URL = voicePath
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: audioFilename)
             audioPlayer?.delegate = self
