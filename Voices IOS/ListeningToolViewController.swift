@@ -15,10 +15,12 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate, SFSp
     // MARK:- Properties
 
     @IBOutlet var listeningProgressBar: UIProgressView!
-    @IBOutlet var play: UIButton!
-    @IBOutlet var pause: UIButton!
+    @IBOutlet var playPauseButton: UIButton!
     @IBOutlet var timeInfo: UILabel!
     @IBOutlet var transcription: UILabel!
+    
+    
+    var playing: Bool = false
     
     var voicePath: URL!
     var duration: Double = 0.0
@@ -121,16 +123,25 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate, SFSp
     }
     
     // MARK: - listening controls.
-    @IBAction func playButtonPushed(_ sender: Any) {
-        audioPlayer?.play()
-        
+    fileprivate func handleUIUpdateWhileListening() {
         updater = CADisplayLink(target: self, selector: #selector(self.listeningProgress))
         updater.preferredFramesPerSecond = 60
         updater.add(to: RunLoop.current, forMode: RunLoop.Mode.default)
     }
-
-    @IBAction func pauseButtonPushed(_ sender: Any) {
-        audioPlayer?.pause()
+    
+    @IBAction func playButtonPushed(_ sender: Any) {
+        if (audioPlayer!.isPlaying) {
+            audioPlayer?.pause()
+            playPauseButton.setTitle("play" , for: .normal)
+        } else {
+            audioPlayer?.play()
+            handleUIUpdateWhileListening()
+            playPauseButton.setTitle("pause", for: .normal)
+        }
+    }
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        playPauseButton.setTitle("play" , for: .normal)
     }
     
     @objc func listeningProgress()  {
@@ -159,4 +170,8 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate, SFSp
     }
     */
 
+}
+
+extension Notification.Name {
+    static let playPauseEvent = Notification.Name("PlayPauseEvent")
 }

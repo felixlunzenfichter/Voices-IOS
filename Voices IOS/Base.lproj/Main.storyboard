@@ -331,13 +331,6 @@
                                     <action selector="playButtonPushed:" destination="1N9-po-06I" eventType="touchUpInside" id="cTa-vi-VNe"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4H-j3-moH">
-                                <rect key="frame" x="271" y="692" width="42" height="30"/>
-                                <state key="normal" title="pause"/>
-                                <connections>
-                                    <action selector="pauseButtonPushed:" destination="1N9-po-06I" eventType="touchUpInside" id="ntM-jl-4El"/>
-                                </connections>
-                            </button>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="FaP-GC-HuJ">
                                 <rect key="frame" x="30" y="597" width="354" height="4"/>
                             </progressView>
@@ -363,7 +356,6 @@
                         <viewLayoutGuide key="safeArea" id="ucT-Sb-xnE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ucT-Sb-xnE" firstAttribute="bottom" secondItem="b4H-j3-moH" secondAttribute="bottom" constant="91" id="1Gj-TK-Y3G"/>
                             <constraint firstItem="lm2-ck-Rwc" firstAttribute="top" secondItem="FaP-GC-HuJ" secondAttribute="bottom" constant="89" id="2pR-Lo-1dI"/>
                             <constraint firstItem="ucT-Sb-xnE" firstAttribute="bottom" secondItem="cyd-ti-orb" secondAttribute="bottom" constant="181" id="564-tk-YGX"/>
                             <constraint firstItem="kZf-fg-EdP" firstAttribute="top" secondItem="C78-DK-1uR" secondAttribute="bottom" constant="8.5" id="5DZ-Eu-m6P"/>
@@ -375,8 +367,6 @@
                             <constraint firstItem="cyd-ti-orb" firstAttribute="top" secondItem="FaP-GC-HuJ" secondAttribute="bottom" constant="10" id="ZBe-fA-b2R"/>
                             <constraint firstItem="FaP-GC-HuJ" firstAttribute="leading" secondItem="lUO-Am-5W6" secondAttribute="leadingMargin" constant="10" id="mXy-Vt-cib"/>
                             <constraint firstItem="FaP-GC-HuJ" firstAttribute="top" secondItem="kZf-fg-EdP" secondAttribute="bottom" constant="45" id="n0O-of-zrK"/>
-                            <constraint firstItem="b4H-j3-moH" firstAttribute="leading" secondItem="lm2-ck-Rwc" secondAttribute="trailing" constant="145" id="sRh-6O-XMY"/>
-                            <constraint firstItem="b4H-j3-moH" firstAttribute="leading" secondItem="lm2-ck-Rwc" secondAttribute="trailing" constant="145" id="vaj-i6-10n"/>
                             <constraint firstItem="ucT-Sb-xnE" firstAttribute="trailing" secondItem="kZf-fg-EdP" secondAttribute="trailing" constant="20" id="x2J-47-9rd"/>
                             <constraint firstItem="lm2-ck-Rwc" firstAttribute="leading" secondItem="ucT-Sb-xnE" secondAttribute="leading" constant="96" id="zeZ-J1-JKQ"/>
                         </constraints>
@@ -386,8 +376,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="listeningProgressBar" destination="FaP-GC-HuJ" id="wsM-lU-U2T"/>
-                        <outlet property="pause" destination="b4H-j3-moH" id="Kvg-VM-kJO"/>
-                        <outlet property="play" destination="lm2-ck-Rwc" id="fPk-OR-xpZ"/>
+                        <outlet property="playPauseButton" destination="lm2-ck-Rwc" id="fPk-OR-xpZ"/>
                         <outlet property="timeInfo" destination="cyd-ti-orb" id="jfb-Cw-ywD"/>
                         <outlet property="transcription" destination="kZf-fg-EdP" id="sei-Wd-6hr"/>
                     </connections>
