@@ -324,30 +324,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lm2-ck-Rwc">
-                                <rect key="frame" x="96" y="690" width="30" height="32"/>
-                                <state key="normal" title="play"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lm2-ck-Rwc">
+                                <rect key="frame" x="25" y="588" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="kGq-Qs-6go"/>
+                                    <constraint firstAttribute="width" constant="200" id="mz5-PS-zhe"/>
+                                </constraints>
+                                <state key="normal" title="play" image="play_1"/>
                                 <connections>
                                     <action selector="playButtonPushed:" destination="1N9-po-06I" eventType="touchUpInside" id="cTa-vi-VNe"/>
                                 </connections>
                             </button>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="FaP-GC-HuJ">
-                                <rect key="frame" x="30" y="597" width="354" height="4"/>
+                                <rect key="frame" x="20" y="564" width="374" height="4"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyd-ti-orb" userLabel="Time Info">
-                                <rect key="frame" x="342" y="611" width="33" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting for transcription." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZf-fg-EdP">
-                                <rect key="frame" x="20" y="531" width="374" height="21"/>
+                                <rect key="frame" x="361" y="573" width="33" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transcription:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C78-DK-1uR">
-                                <rect key="frame" x="20" y="501.5" width="105" height="21"/>
+                                <rect key="frame" x="20" y="492" width="105" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting for transcription." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZf-fg-EdP">
+                                <rect key="frame" x="20" y="523" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -356,19 +360,18 @@
                         <viewLayoutGuide key="safeArea" id="ucT-Sb-xnE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="lm2-ck-Rwc" firstAttribute="top" secondItem="FaP-GC-HuJ" secondAttribute="bottom" constant="89" id="2pR-Lo-1dI"/>
-                            <constraint firstItem="ucT-Sb-xnE" firstAttribute="bottom" secondItem="cyd-ti-orb" secondAttribute="bottom" constant="181" id="564-tk-YGX"/>
-                            <constraint firstItem="kZf-fg-EdP" firstAttribute="top" secondItem="C78-DK-1uR" secondAttribute="bottom" constant="8.5" id="5DZ-Eu-m6P"/>
-                            <constraint firstItem="kZf-fg-EdP" firstAttribute="leading" secondItem="ucT-Sb-xnE" secondAttribute="leading" constant="20" id="GB6-Mp-TeI"/>
-                            <constraint firstItem="ucT-Sb-xnE" firstAttribute="trailing" secondItem="cyd-ti-orb" secondAttribute="trailing" constant="39" id="Gaa-tP-eub"/>
-                            <constraint firstItem="C78-DK-1uR" firstAttribute="leading" secondItem="ucT-Sb-xnE" secondAttribute="leading" constant="20" id="IIn-cF-hap"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="FaP-GC-HuJ" secondAttribute="trailing" constant="10" id="JfP-mk-bfc"/>
-                            <constraint firstItem="ucT-Sb-xnE" firstAttribute="bottom" secondItem="lm2-ck-Rwc" secondAttribute="bottom" constant="91" id="Tfv-JU-EjK"/>
-                            <constraint firstItem="cyd-ti-orb" firstAttribute="top" secondItem="FaP-GC-HuJ" secondAttribute="bottom" constant="10" id="ZBe-fA-b2R"/>
-                            <constraint firstItem="FaP-GC-HuJ" firstAttribute="leading" secondItem="lUO-Am-5W6" secondAttribute="leadingMargin" constant="10" id="mXy-Vt-cib"/>
-                            <constraint firstItem="FaP-GC-HuJ" firstAttribute="top" secondItem="kZf-fg-EdP" secondAttribute="bottom" constant="45" id="n0O-of-zrK"/>
-                            <constraint firstItem="ucT-Sb-xnE" firstAttribute="trailing" secondItem="kZf-fg-EdP" secondAttribute="trailing" constant="20" id="x2J-47-9rd"/>
-                            <constraint firstItem="lm2-ck-Rwc" firstAttribute="leading" secondItem="ucT-Sb-xnE" secondAttribute="leading" constant="96" id="zeZ-J1-JKQ"/>
+                            <constraint firstItem="ucT-Sb-xnE" firstAttribute="bottom" secondItem="lm2-ck-Rwc" secondAttribute="bottom" constant="25" id="7xz-p2-z7p"/>
+                            <constraint firstItem="FaP-GC-HuJ" firstAttribute="leading" secondItem="ucT-Sb-xnE" secondAttribute="leading" constant="20" id="9bL-ip-b0l"/>
+                            <constraint firstItem="FaP-GC-HuJ" firstAttribute="top" secondItem="kZf-fg-EdP" secondAttribute="bottom" constant="20" id="J1E-yF-FQq"/>
+                            <constraint firstItem="ucT-Sb-xnE" firstAttribute="trailing" secondItem="kZf-fg-EdP" secondAttribute="trailing" constant="20" id="LCy-bZ-eUB"/>
+                            <constraint firstItem="ucT-Sb-xnE" firstAttribute="trailing" secondItem="FaP-GC-HuJ" secondAttribute="trailing" constant="20" id="Oe7-cu-ZT7"/>
+                            <constraint firstItem="kZf-fg-EdP" firstAttribute="leading" secondItem="ucT-Sb-xnE" secondAttribute="leading" constant="20" id="QSW-bO-L2T"/>
+                            <constraint firstItem="cyd-ti-orb" firstAttribute="top" secondItem="FaP-GC-HuJ" secondAttribute="bottom" constant="5" id="Ti2-Fk-9v7"/>
+                            <constraint firstItem="kZf-fg-EdP" firstAttribute="top" secondItem="C78-DK-1uR" secondAttribute="bottom" constant="10" id="UFi-Xa-bwB"/>
+                            <constraint firstItem="lm2-ck-Rwc" firstAttribute="top" secondItem="FaP-GC-HuJ" secondAttribute="bottom" constant="20" id="mlJ-k2-Ue9"/>
+                            <constraint firstItem="C78-DK-1uR" firstAttribute="leading" secondItem="ucT-Sb-xnE" secondAttribute="leading" constant="20" id="pIp-o0-Hb1"/>
+                            <constraint firstItem="lm2-ck-Rwc" firstAttribute="leading" secondItem="ucT-Sb-xnE" secondAttribute="leading" constant="25" id="t8N-eW-GJM"/>
+                            <constraint firstItem="ucT-Sb-xnE" firstAttribute="trailing" secondItem="cyd-ti-orb" secondAttribute="trailing" constant="20" id="ush-ly-Pfe"/>
                         </constraints>
                     </view>
                     <toolbarItems/>

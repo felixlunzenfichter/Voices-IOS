@@ -44,6 +44,7 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate, SFSp
         transcription.numberOfLines = 0
         recognizeFile(url: voicePath as URL.ReferenceType)
         
+        
     }
 
     fileprivate func initAudioPlayer() {
@@ -132,16 +133,19 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate, SFSp
     @IBAction func playButtonPushed(_ sender: Any) {
         if (audioPlayer!.isPlaying) {
             audioPlayer?.pause()
-            playPauseButton.setTitle("play" , for: .normal)
+            playPauseButton.setImage(#imageLiteral(resourceName: "play_1"), for: .normal)
+            
+//            playPauseButton.setTitle("play" , for: .normal)
         } else {
             audioPlayer?.play()
+            playPauseButton.setImage(#imageLiteral(resourceName: "pause_1"), for: .normal)
             handleUIUpdateWhileListening()
-            playPauseButton.setTitle("pause", for: .normal)
+//            playPauseButton.setTitle("pause", for: .normal)
         }
     }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        playPauseButton.setTitle("play" , for: .normal)
+        playPauseButton.setImage(#imageLiteral(resourceName: "play_1"), for: .normal)
     }
     
     @objc func listeningProgress()  {
