@@ -16,7 +16,6 @@ class VoicesTableViewController: UITableViewController {
     var voices : [URL]!
     var chosenVoice : URL?
     
-    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -52,7 +51,7 @@ class VoicesTableViewController: UITableViewController {
     }
     
     fileprivate func initializeVoiceCell(_ cell: VoiceTableViewCell, _ indexPath: IndexPath) {
-        let timeStamp: String = String(String(voices[indexPath.row]).suffix(23).prefix(19))
+        let timeStamp: String = String(voices[indexPath.row].absoluteString.suffix(23).prefix(19))
         cell.title.text = timeStamp
         cell.path = voices[indexPath.row]
     }
@@ -68,7 +67,6 @@ class VoicesTableViewController: UITableViewController {
         }
     }
     
-
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         unselectRow(animated)

@@ -39,7 +39,7 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate, SFSp
         initTimeInfo()
         listeningProgressBar.progress = 0.0
         transcription.numberOfLines = 0
-        recognizeFile(url: NSURL(fileURLWithPath: voicePath.absoluteString))
+        recognizeFile(url: voicePath as URL.ReferenceType)
         
     }
     
