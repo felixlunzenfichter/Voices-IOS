@@ -30,6 +30,7 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate, SFSp
     
     var speech : SFSpeechURLRecognitionRequest?
     
+    // MARK: - setup
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,45 +43,7 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate, SFSp
         recognizeFile(url: voicePath as URL.ReferenceType)
         
     }
-    
-    func recognizeFile(url:NSURL) {
-       guard let myRecognizer = SFSpeechRecognizer() else {
-          // A recognizer is not supported for the current locale
-          return
-       }
-        
-        myRecognizer.delegate = self
-        
-        SFSpeechRecognizer.requestAuthorization { authStatus in
-            print(authStatus)
-        }
-       
-        if !myRecognizer.isAvailable {
-          // The recognizer is not available right now
-          return
-       }
-        
 
-       let request = SFSpeechURLRecognitionRequest(url:voicePath)
-        
-        myRecognizer.recognitionTask(with: request) { (result, error) in
-            guard let result = result else {
-             // Recognition failed, so check error for details and handle it
-                print("fail")
-                self.transcription.text = "Apple failed to transcribe this voice."
-                return
-            }
-        
-        
-
-          // Print the speech that has been recognized so far
-          if result.isFinal {
-            self.transcription.text = result.bestTranscription.formattedString
-          }
-       }
-    }
-
-    // MARK: - setup
     fileprivate func initAudioPlayer() {
         let audioFilename : URL = voicePath
         do {
@@ -120,7 +83,41 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate, SFSp
     
     fileprivate func setDuration() {
         duration = ((audioPlayer?.duration ?? 0.0) * 10).rounded() / 10
-        print(duration)
+    }
+    
+    // MARK: - transcription
+    func recognizeFile(url:NSURL) {
+        guard let myRecognizer = SFSpeechRecognizer() else {
+        // A recognizer is not supported for the current locale
+            print("Could not create SFpeechRecognizer instance in function recognizeFile().")
+            return
+        }
+        myRecognizer.delegate = self
+        
+        SFSpeechRecognizer.requestAuthorization { authStatus in
+            print(authStatus)
+        }
+       
+        if !myRecognizer.isAvailable {
+            // The recognizer is not available right now
+            return
+        }
+        
+
+       let request = SFSpeechURLRecognitionRequest(url:voicePath)
+        
+        myRecognizer.recognitionTask(with: request) { (result, error) in
+            guard let result = result else {
+                // Recognition failed, so check error for details and handle it
+                print("fail")
+                self.transcription.text = "Apple failed to transcribe this voice."
+                return
+            }
+          // Print the speech that has been recognized so far
+            if result.isFinal {
+                self.transcription.text = result.bestTranscription.formattedString
+            }
+       }
     }
     
     // MARK: - listening controls.
