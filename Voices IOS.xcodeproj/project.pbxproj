@@ -14,7 +14,6 @@
 		73BE099325224225000D2B2F /* MyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BE099225224225000D2B2F /* MyNavigationController.swift */; };
 		73DCFD9A251126F0000AD100 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DCFD99251126F0000AD100 /* AppDelegate.swift */; };
 		73DCFD9C251126F0000AD100 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DCFD9B251126F0000AD100 /* SceneDelegate.swift */; };
-		73DCFD9E251126F0000AD100 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DCFD9D251126F0000AD100 /* ViewController.swift */; };
 		73DCFDA1251126F0000AD100 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73DCFD9F251126F0000AD100 /* Main.storyboard */; };
 		73DCFDA3251126F1000AD100 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73DCFDA2251126F1000AD100 /* Assets.xcassets */; };
 		73DCFDA6251126F1000AD100 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73DCFDA4251126F1000AD100 /* LaunchScreen.storyboard */; };
@@ -31,7 +30,6 @@
 		73DCFD96251126F0000AD100 /* Voices IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Voices IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73DCFD99251126F0000AD100 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73DCFD9B251126F0000AD100 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		73DCFD9D251126F0000AD100 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		73DCFDA0251126F0000AD100 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		73DCFDA2251126F1000AD100 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		73DCFDA5251126F1000AD100 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -84,7 +82,6 @@
 				73DCFDA2251126F1000AD100 /* Assets.xcassets */,
 				73DCFDA7251126F1000AD100 /* Info.plist */,
 				73DCFDA4251126F1000AD100 /* LaunchScreen.storyboard */,
-				73DCFD9D251126F0000AD100 /* ViewController.swift */,
 			);
 			path = "Voices IOS";
 			sourceTree = "<group>";
@@ -208,7 +205,6 @@
 			files = (
 				7340F6C9251E451C006ABA84 /* VoiceTableViewCell.swift in Sources */,
 				73BE099325224225000D2B2F /* MyNavigationController.swift in Sources */,
-				73DCFD9E251126F0000AD100 /* ViewController.swift in Sources */,
 				73DCFD9A251126F0000AD100 /* AppDelegate.swift in Sources */,
 				73DCFD9C251126F0000AD100 /* SceneDelegate.swift in Sources */,
 				734687D32516433500A9B6A7 /* VoicesTableViewController.swift in Sources */,
