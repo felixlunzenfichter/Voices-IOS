@@ -85,7 +85,7 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate, SFSp
         duration = ((audioPlayer?.duration ?? 0.0) * 10).rounded() / 10
     }
     
-    // MARK: - transcription
+    // MARK: - Speech recognition
     func recognizeFile(url:NSURL) {
         guard let myRecognizer = SFSpeechRecognizer() else {
         // A recognizer is not supported for the current locale
@@ -124,8 +124,8 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate, SFSp
     @IBAction func playButtonPushed(_ sender: Any) {
         audioPlayer?.play()
         
-        updater = CADisplayLink(target: self, selector: #selector(self.musicProgress))
-        updater.preferredFramesPerSecond = 5
+        updater = CADisplayLink(target: self, selector: #selector(self.listeningProgress))
+        updater.preferredFramesPerSecond = 60
         updater.add(to: RunLoop.current, forMode: RunLoop.Mode.default)
     }
 
@@ -133,7 +133,7 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate, SFSp
         audioPlayer?.pause()
     }
     
-    @objc func musicProgress()  {
+    @objc func listeningProgress()  {
         updateProgressBar()
         updateTimeInfo()
     }
