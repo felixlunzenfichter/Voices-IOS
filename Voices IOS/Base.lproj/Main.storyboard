@@ -263,6 +263,11 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Voices" id="Zbm-Dz-9pb">
+                        <barButtonItem key="leftBarButtonItem" image="arrow.2.circlepath" catalog="system" id="b6W-9x-Ci4">
+                            <connections>
+                                <action selector="refreshButtonPressed:" destination="2Ie-96-eIN" id="An4-An-XUT"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Record new Voice" id="fKg-aU-72k">
                             <connections>
                                 <segue destination="X8F-EP-YIf" kind="show" id="FkO-Ue-IdO"/>
@@ -282,6 +287,24 @@
                     <view key="view" contentMode="scaleToFill" id="FS1-ET-lUn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wjT-m6-8I6">
+                                <rect key="frame" x="107" y="201" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Record"/>
+                                <connections>
+                                    <action selector="pressedRecordButton:" destination="X8F-EP-YIf" eventType="touchUpInside" id="3mP-09-fvg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="szl-T9-c6Z">
+                                <rect key="frame" x="234" y="201" width="106" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Stop Recording"/>
+                                <connections>
+                                    <action selector="StopRecordingButtonPressed:" destination="X8F-EP-YIf" eventType="touchUpInside" id="mRw-0R-Jc3"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="420-qp-RIW"/>
                     </view>
@@ -381,19 +404,36 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting for transcription." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZf-fg-EdP">
+                                <rect key="frame" x="20" y="533" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transcription:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C78-DK-1uR">
+                                <rect key="frame" x="20" y="503.5" width="105" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="ucT-Sb-xnE" firstAttribute="bottom" secondItem="b4H-j3-moH" secondAttribute="bottom" constant="91" id="1Gj-TK-Y3G"/>
                             <constraint firstItem="lm2-ck-Rwc" firstAttribute="top" secondItem="FaP-GC-HuJ" secondAttribute="bottom" constant="89" id="2pR-Lo-1dI"/>
                             <constraint firstItem="ucT-Sb-xnE" firstAttribute="bottom" secondItem="cyd-ti-orb" secondAttribute="bottom" constant="181" id="564-tk-YGX"/>
+                            <constraint firstItem="kZf-fg-EdP" firstAttribute="top" secondItem="C78-DK-1uR" secondAttribute="bottom" constant="8.5" id="5DZ-Eu-m6P"/>
+                            <constraint firstItem="kZf-fg-EdP" firstAttribute="leading" secondItem="ucT-Sb-xnE" secondAttribute="leading" constant="20" id="GB6-Mp-TeI"/>
                             <constraint firstItem="ucT-Sb-xnE" firstAttribute="trailing" secondItem="cyd-ti-orb" secondAttribute="trailing" constant="39" id="Gaa-tP-eub"/>
+                            <constraint firstItem="C78-DK-1uR" firstAttribute="leading" secondItem="ucT-Sb-xnE" secondAttribute="leading" constant="20" id="IIn-cF-hap"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FaP-GC-HuJ" secondAttribute="trailing" constant="10" id="JfP-mk-bfc"/>
                             <constraint firstItem="ucT-Sb-xnE" firstAttribute="bottom" secondItem="lm2-ck-Rwc" secondAttribute="bottom" constant="91" id="Tfv-JU-EjK"/>
                             <constraint firstItem="cyd-ti-orb" firstAttribute="top" secondItem="FaP-GC-HuJ" secondAttribute="bottom" constant="10" id="ZBe-fA-b2R"/>
                             <constraint firstItem="FaP-GC-HuJ" firstAttribute="leading" secondItem="lUO-Am-5W6" secondAttribute="leadingMargin" constant="10" id="mXy-Vt-cib"/>
+                            <constraint firstItem="FaP-GC-HuJ" firstAttribute="top" secondItem="kZf-fg-EdP" secondAttribute="bottom" constant="45" id="n0O-of-zrK"/>
                             <constraint firstItem="b4H-j3-moH" firstAttribute="leading" secondItem="lm2-ck-Rwc" secondAttribute="trailing" constant="145" id="sRh-6O-XMY"/>
                             <constraint firstItem="b4H-j3-moH" firstAttribute="leading" secondItem="lm2-ck-Rwc" secondAttribute="trailing" constant="145" id="vaj-i6-10n"/>
+                            <constraint firstItem="ucT-Sb-xnE" firstAttribute="trailing" secondItem="kZf-fg-EdP" secondAttribute="trailing" constant="20" id="x2J-47-9rd"/>
                             <constraint firstItem="lm2-ck-Rwc" firstAttribute="leading" secondItem="ucT-Sb-xnE" secondAttribute="leading" constant="96" id="zeZ-J1-JKQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ucT-Sb-xnE"/>
@@ -406,11 +446,12 @@
                         <outlet property="pause" destination="b4H-j3-moH" id="Kvg-VM-kJO"/>
                         <outlet property="play" destination="lm2-ck-Rwc" id="fPk-OR-xpZ"/>
                         <outlet property="timeInfo" destination="cyd-ti-orb" id="jfb-Cw-ywD"/>
+                        <outlet property="transcription" destination="kZf-fg-EdP" id="sei-Wd-6hr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tSM-xb-zjK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="694" y="2871"/>
+            <point key="canvasLocation" x="692.75362318840587" y="2870.7589285714284"/>
         </scene>
         <!--Control Panel Controller-->
         <scene sceneID="gYC-Ak-rsu">
@@ -469,10 +510,10 @@
             </objects>
             <point key="canvasLocation" x="2457.971014492754" y="620.75892857142856"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--My Navigation Controller-->
         <scene sceneID="0ED-20-F4e">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FWf-Pz-IGg" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FWf-Pz-IGg" customClass="MyNavigationController" customModule="Voices_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xwo-VN-KTR">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -489,6 +530,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.2.circlepath" catalog="system" width="128" height="101"/>
         <image name="arrowshape.turn.up.right" catalog="system" width="128" height="106"/>
         <image name="flag" catalog="system" width="128" height="121"/>
         <image name="icloud.and.arrow.down.fill" catalog="system" width="128" height="112"/>

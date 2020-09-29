@@ -55,6 +55,8 @@
 	</array>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Access Mic</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Perform Speech Recognition</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

@@ -16,7 +16,9 @@ class VoicesTableViewController: UITableViewController {
     var voices : [String]!
     var chosenVoice : String?
     
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         voices = getListOfVoices()
@@ -24,6 +26,8 @@ class VoicesTableViewController: UITableViewController {
         // Uncomment the following line to preserve selection between presentations
          self.clearsSelectionOnViewWillAppear = true
     }
+    
+    
 
     // MARK: - Table view data source
 
@@ -35,7 +39,11 @@ class VoicesTableViewController: UITableViewController {
         return voices.count
     }
 
-
+    @IBAction func refreshButtonPressed(_ sender: Any) {
+        voices = getListOfVoices()
+        self.tableView.reloadData()
+    }
+    
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         

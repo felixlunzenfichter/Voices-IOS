@@ -8,8 +8,9 @@
 
 import UIKit
 import AVFoundation
+import Speech
 
-class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate {
+class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate, SFSpeechRecognizerDelegate {
     
     // MARK:- Properties
 
@@ -17,6 +18,7 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet var play: UIButton!
     @IBOutlet var pause: UIButton!
     @IBOutlet var timeInfo: UILabel!
+    @IBOutlet var transcription: UILabel!
     
     var voicePath: String!
     var duration: Double = 0.0
@@ -26,6 +28,7 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate {
     var audioPlayer: AVAudioPlayer?
     var audioSession: AVAudioSession = AVAudioSession.sharedInstance()
     
+    var speech : SFSpeechURLRecognitionRequest?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,8 +38,51 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate {
         setDuration()
         initTimeInfo()
         listeningProgressBar.progress = 0.0
+        
+        transcription.numberOfLines = 0
+        print("transcribe")
+        recognizeFile(url: NSURL(fileURLWithPath: voicePath))
+        print("done")
+        
     }
     
+    func recognizeFile(url:NSURL) {
+       guard let myRecognizer = SFSpeechRecognizer() else {
+          // A recognizer is not supported for the current locale
+          return
+       }
+        
+        myRecognizer.delegate = self
+        
+        SFSpeechRecognizer.requestAuthorization { authStatus in
+            print(authStatus)
+        }
+       
+        if !myRecognizer.isAvailable {
+          // The recognizer is not available right now
+          return
+       }
+        
+
+       let request = SFSpeechURLRecognitionRequest(url: URL(fileURLWithPath: voicePath))
+        
+        myRecognizer.recognitionTask(with: request) { (result, error) in
+            guard let result = result else {
+             // Recognition failed, so check error for details and handle it
+                print("fail")
+                self.transcription.text = "Apple failed to transcribe this voice."
+                return
+            }
+        
+        
+
+          // Print the speech that has been recognized so far
+          if result.isFinal {
+            self.transcription.text = result.bestTranscription.formattedString
+          }
+       }
+    }
+
     // MARK: - setup
     fileprivate func initAudioPlayer() {
         let audioFilename : URL = URL(fileURLWithPath: voicePath)
