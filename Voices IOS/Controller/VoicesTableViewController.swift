@@ -7,12 +7,19 @@
 //
 
 import UIKit
+import CoreData
+
 
 class VoicesTableViewController: UITableViewController {
     
     // MARK: - Properties
     var voices : [URL]!
     var chosenVoice : URL?
+    
+    private lazy var persistentContainer: NSPersistentContainer = {
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        return appDelegate!.persistentContainer
+    }()
  
     override func viewDidLoad() {
         
