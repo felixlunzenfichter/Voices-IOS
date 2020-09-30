@@ -8,14 +8,12 @@
 
 import UIKit
 
-
-
 class VoicesTableViewController: UITableViewController {
     
     // MARK: - Properties
     var voices : [URL]!
     var chosenVoice : URL?
-    
+ 
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -24,8 +22,6 @@ class VoicesTableViewController: UITableViewController {
         // Uncomment the following line to preserve selection between presentations
          self.clearsSelectionOnViewWillAppear = true
     }
-    
-    
 
     // MARK: - Table view data source
 
@@ -112,3 +108,5 @@ class VoicesTableViewController: UITableViewController {
     }
 
 }
+
+

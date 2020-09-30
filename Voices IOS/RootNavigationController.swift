@@ -7,11 +7,18 @@
 //
 
 import UIKit
+import CoreData
 
-class MyNavigationController: UINavigationController {
+class RootNavigationController: UINavigationController {
+    
+    var container: NSPersistentContainer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guard container != nil else {
+            fatalError("This view needs a persistent container.")
+        }
 
         // Do any additional setup after loading the view.
     }

@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FWf-Pz-IGg">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -14,7 +12,7 @@
             <objects>
                 <viewController title="Conversation" id="H7u-cU-f89" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z6E-w4-mRu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="X MB/s" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fot-pt-xVc" userLabel="Internet Speed">
@@ -26,7 +24,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2sv-Ay-DQB">
-                                <rect key="frame" x="0.0" y="544" width="414" height="264"/>
+                                <rect key="frame" x="0.0" y="302" width="600" height="264"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="PLX-iq-xm3" kind="show" id="7ZA-q6-5PN"/>
@@ -162,7 +160,7 @@
             <objects>
                 <viewController id="g21-QA-xoa" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qqT-WS-BX8" customClass="FullScreenRecorder">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFR-lD-9fZ">
@@ -188,7 +186,7 @@
             <objects>
                 <viewController title="Conversations Overview" id="JZD-e4-JgS" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xmy-bn-mro">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bP9-lt-QIj">
@@ -229,19 +227,19 @@
             <objects>
                 <tableViewController id="2Ie-96-eIN" customClass="VoicesTableViewController" customModule="Voices_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="crX-pR-irt">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VoiceTableViewCell" rowHeight="98" id="R6L-Wu-Sye" customClass="VoiceTableViewCell" customModule="Voices_IOS" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="98"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="98"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="R6L-Wu-Sye" id="AK5-tO-NcI">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="98"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="98"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="some text" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" background="play_1" translatesAutoresizingMaskIntoConstraints="NO" id="OYN-0B-26M">
-                                            <rect key="frame" x="302" y="16" width="92" height="66"/>
+                                            <rect key="frame" x="488" y="16" width="92" height="66"/>
                                             <accessibility key="accessibilityConfiguration" identifier="VoiceCell"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
@@ -287,7 +285,7 @@
             <objects>
                 <viewController id="X8F-EP-YIf" customClass="RecorderViewController" customModule="Voices_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FS1-ET-lUn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wjT-m6-8I6">
@@ -321,11 +319,11 @@
             <objects>
                 <viewController storyboardIdentifier="PlayWindow" id="1N9-po-06I" customClass="ListeningToolViewController" customModule="Voices_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lUO-Am-5W6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lm2-ck-Rwc">
-                                <rect key="frame" x="25" y="588" width="200" height="200"/>
+                                <rect key="frame" x="25" y="326" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="kGq-Qs-6go"/>
                                     <constraint firstAttribute="width" constant="200" id="mz5-PS-zhe"/>
@@ -336,22 +334,22 @@
                                 </connections>
                             </button>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="FaP-GC-HuJ">
-                                <rect key="frame" x="20" y="564" width="374" height="4"/>
+                                <rect key="frame" x="20" y="302" width="560" height="4"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyd-ti-orb" userLabel="Time Info">
-                                <rect key="frame" x="361" y="573" width="33" height="20.5"/>
+                                <rect key="frame" x="547" y="311" width="33" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transcription:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C78-DK-1uR">
-                                <rect key="frame" x="20" y="492" width="105" height="21"/>
+                                <rect key="frame" x="20" y="230" width="105" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting for transcription." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZf-fg-EdP">
-                                <rect key="frame" x="20" y="523" width="374" height="21"/>
+                                <rect key="frame" x="20" y="261" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -393,11 +391,11 @@
             <objects>
                 <viewController id="PLX-iq-xm3" customClass="ControlPanelController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E0E-nK-i7t" userLabel="Control Panel">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y9R-0g-Xqk" userLabel="Listening Controls" customClass="ListeningControls">
-                                <rect key="frame" x="0.0" y="20" width="414" height="250"/>
+                                <rect key="frame" x="0.0" y="-222" width="600" height="250"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -445,10 +443,10 @@
             </objects>
             <point key="canvasLocation" x="2457.971014492754" y="620.75892857142856"/>
         </scene>
-        <!--My Navigation Controller-->
+        <!--Root Navigation Controller-->
         <scene sceneID="0ED-20-F4e">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FWf-Pz-IGg" customClass="MyNavigationController" customModule="Voices_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FWf-Pz-IGg" customClass="RootNavigationController" customModule="Voices_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xwo-VN-KTR">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
