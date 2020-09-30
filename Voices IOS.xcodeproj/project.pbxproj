@@ -52,6 +52,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7376101E2524EDA60005C741 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				73DCFD99251126F0000AD100 /* AppDelegate.swift */,
+				73DCFD9B251126F0000AD100 /* SceneDelegate.swift */,
+				734687D22516433500A9B6A7 /* VoicesTableViewController.swift */,
+				734687D62517B79200A9B6A7 /* ListeningToolViewController.swift */,
+				7374CBA42521F6D3008FC2F5 /* RecorderViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7376101F2524EDC40005C741 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				73DCFD9F251126F0000AD100 /* Main.storyboard */,
+				73DCFDA4251126F1000AD100 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		737610212524EE0A0005C741 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				734687D025163A4800A9B6A7 /* VoiceTableViewCell.swift */,
+				737610182524D0050005C741 /* PersistentContainer.swift */,
+			);
+			name = Model;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		73DCFD8D251126F0000AD100 = {
 			isa = PBXGroup;
 			children = (
@@ -74,17 +105,11 @@
 		73DCFD98251126F0000AD100 /* Voices IOS */ = {
 			isa = PBXGroup;
 			children = (
-				73DCFD99251126F0000AD100 /* AppDelegate.swift */,
-				73DCFD9B251126F0000AD100 /* SceneDelegate.swift */,
-				73DCFD9F251126F0000AD100 /* Main.storyboard */,
-				734687D22516433500A9B6A7 /* VoicesTableViewController.swift */,
-				734687D025163A4800A9B6A7 /* VoiceTableViewCell.swift */,
-				734687D62517B79200A9B6A7 /* ListeningToolViewController.swift */,
-				7374CBA42521F6D3008FC2F5 /* RecorderViewController.swift */,
-				73DCFDA2251126F1000AD100 /* Assets.xcassets */,
 				73DCFDA7251126F1000AD100 /* Info.plist */,
-				73DCFDA4251126F1000AD100 /* LaunchScreen.storyboard */,
-				737610182524D0050005C741 /* PersistentContainer.swift */,
+				73DCFDA2251126F1000AD100 /* Assets.xcassets */,
+				737610212524EE0A0005C741 /* Model */,
+				7376101F2524EDC40005C741 /* View */,
+				7376101E2524EDA60005C741 /* Controller */,
 			);
 			path = "Voices IOS";
 			sourceTree = "<group>";

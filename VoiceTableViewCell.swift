@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class VoiceTableViewCell: UITableViewCell, AVAudioPlayerDelegate {
+class VoiceTableViewCell: UITableViewCell{
     
     // MARK: - Properties
     @IBOutlet var title: UITextField!
