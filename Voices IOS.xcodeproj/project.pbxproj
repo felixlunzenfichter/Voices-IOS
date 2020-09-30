@@ -76,6 +76,7 @@
 		737610212524EE0A0005C741 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				737610132524A8DE0005C741 /* Model.xcdatamodeld */,
 				7376102B25251B800005C741 /* Voice+CoreDataProperties.swift */,
 				734687D025163A4800A9B6A7 /* VoiceTableViewCell.swift */,
 			);
@@ -104,7 +105,6 @@
 		73DCFD98251126F0000AD100 /* Voices IOS */ = {
 			isa = PBXGroup;
 			children = (
-				737610132524A8DE0005C741 /* Model.xcdatamodeld */,
 				73DCFDA7251126F1000AD100 /* Info.plist */,
 				73DCFDA2251126F1000AD100 /* Assets.xcassets */,
 				737610212524EE0A0005C741 /* Model */,
