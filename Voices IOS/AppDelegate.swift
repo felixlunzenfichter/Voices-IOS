@@ -7,9 +7,22 @@
 //
 
 import UIKit
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    
+    // MARK: - Persistent Storage
+    lazy var persistentContainer: NSPersistentContainer = {
+            let container = NSPersistentContainer(name: "Model")
+            container.loadPersistentStores { description, error in
+                if let error = error {
+                    fatalError("Unable to load persistent stores: \(error)")
+                }
+            }
+            return container
+        }()
 
 
 

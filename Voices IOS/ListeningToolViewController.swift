@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import Speech
 
-class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate, SFSpeechRecognizerDelegate {
+class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate {
     
     // MARK:- Properties
 
@@ -43,7 +43,6 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate, SFSp
         listeningProgressBar.progress = 0.0
         transcription.numberOfLines = 0
         recognizeFile(url: voicePath as URL.ReferenceType)
-        
         
     }
 
@@ -88,40 +87,7 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate, SFSp
         duration = ((audioPlayer?.duration ?? 0.0) * 10).rounded() / 10
     }
     
-    // MARK: - Speech recognition
-    func recognizeFile(url:NSURL) {
-        guard let myRecognizer = SFSpeechRecognizer() else {
-        // A recognizer is not supported for the current locale
-            print("Could not create SFpeechRecognizer instance in function recognizeFile().")
-            return
-        }
-        myRecognizer.delegate = self
-        
-        SFSpeechRecognizer.requestAuthorization { authStatus in
-            print(authStatus)
-        }
-       
-        if !myRecognizer.isAvailable {
-            // The recognizer is not available right now
-            return
-        }
-        
 
-       let request = SFSpeechURLRecognitionRequest(url:voicePath)
-        
-        myRecognizer.recognitionTask(with: request) { (result, error) in
-            guard let result = result else {
-                // Recognition failed, so check error for details and handle it
-                print("fail")
-                self.transcription.text = "Apple failed to transcribe this voice."
-                return
-            }
-          // Print the speech that has been recognized so far
-            if result.isFinal {
-                self.transcription.text = result.bestTranscription.formattedString
-            }
-       }
-    }
     
     // MARK: - listening controls.
     fileprivate func handleUIUpdateWhileListening() {
@@ -164,16 +130,45 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate, SFSp
         timeInfo.text = "\(roundedTime)/\(duration)"
     }
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension ListeningToolViewController : SFSpeechRecognizerDelegate {
+    
+    // MARK: - Speech recognition
+    func recognizeFile(url:NSURL) {
+        guard let myRecognizer = SFSpeechRecognizer() else {
+        // A recognizer is not supported for the current locale
+            print("Could not create SFpeechRecognizer instance in function recognizeFile().")
+            return
+        }
+        myRecognizer.delegate = self
+        
+        SFSpeechRecognizer.requestAuthorization { authStatus in
+            print(authStatus)
+        }
+       
+        if !myRecognizer.isAvailable {
+            // The recognizer is not available right now
+            return
+        }
+        
+
+       let request = SFSpeechURLRecognitionRequest(url:voicePath)
+        
+        myRecognizer.recognitionTask(with: request) { (result, error) in
+            guard let result = result else {
+                // Recognition failed, so check error for details and handle it
+                print("fail")
+                self.transcription.text = "Apple failed to transcribe this voice."
+                return
+            }
+          // Print the speech that has been recognized so far
+            if result.isFinal {
+                self.transcription.text = result.bestTranscription.formattedString
+            }
+       }
     }
-    */
-
+    
 }
 
 extension Notification.Name {
