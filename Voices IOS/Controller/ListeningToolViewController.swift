@@ -13,7 +13,6 @@ import Speech
 class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate {
     
     // MARK:- Properties
-
     @IBOutlet var listeningProgressBar: UIProgressView!
     @IBOutlet var playPauseButton: UIButton!
     @IBOutlet var timeInfo: UILabel!
@@ -85,24 +84,11 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate {
         duration = ((audioPlayer?.duration ?? 0.0) * 10).rounded() / 10
     }
     
-
-    
     // MARK: - listening controls.
     fileprivate func handleUIUpdateWhileListening() {
         let updater = CADisplayLink(target: self, selector: #selector(self.listeningProgress))
         updater.preferredFramesPerSecond = 60
         updater.add(to: RunLoop.current, forMode: RunLoop.Mode.default)
-    }
-    
-    @IBAction func playButtonPushed(_ sender: Any) {
-        if (audioPlayer!.isPlaying) {
-            audioPlayer?.pause()
-            playPauseButton.setImage(#imageLiteral(resourceName: "play_1"), for: .normal)
-        } else {
-            audioPlayer?.play()
-            playPauseButton.setImage(#imageLiteral(resourceName: "pause_1"), for: .normal)
-            handleUIUpdateWhileListening()
-        }
     }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
@@ -127,9 +113,22 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate {
 
 }
 
+// MARK: - IBActions
+extension ListeningToolViewController {
+    @IBAction func playButtonPushed(_ sender: Any) {
+        if (audioPlayer!.isPlaying) {
+            audioPlayer?.pause()
+            playPauseButton.setImage(#imageLiteral(resourceName: "play_1"), for: .normal)
+        } else {
+            audioPlayer?.play()
+            playPauseButton.setImage(#imageLiteral(resourceName: "pause_1"), for: .normal)
+            handleUIUpdateWhileListening()
+        }
+    }
+}
+
+// MARK: - Speech recognition
 extension ListeningToolViewController : SFSpeechRecognizerDelegate {
-    
-    // MARK: - Speech recognition
     func transcribe(url:NSURL) {
         guard let myRecognizer = SFSpeechRecognizer() else {
         // A recognizer is not supported for the current locale
@@ -164,7 +163,10 @@ extension ListeningToolViewController : SFSpeechRecognizerDelegate {
             }
        }
     }
-    
+}
+
+// MARK:- helper functions.
+extension ListeningToolViewController {
     func getDocumentsDirectory() -> URL {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
     }
@@ -172,7 +174,6 @@ extension ListeningToolViewController : SFSpeechRecognizerDelegate {
     func getVoiceURL(audioFileName: String) -> URL {
         getDocumentsDirectory().appendingPathComponent("\(audioFileName)")
     }
-    
 }
 
 extension Notification.Name {

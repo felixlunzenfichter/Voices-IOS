@@ -13,6 +13,7 @@
 		7374CBA52521F6D3008FC2F5 /* RecorderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7374CBA42521F6D3008FC2F5 /* RecorderViewController.swift */; };
 		737610152524A8DE0005C741 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 737610132524A8DE0005C741 /* Model.xcdatamodeld */; };
 		7376103D252528240005C741 /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7376103C252528240005C741 /* PersistentContainer.swift */; };
+		7376105425265B8A0005C741 /* PathNavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7376105325265B8A0005C741 /* PathNavigationHelper.swift */; };
 		73DCFD9A251126F0000AD100 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DCFD99251126F0000AD100 /* AppDelegate.swift */; };
 		73DCFD9C251126F0000AD100 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DCFD9B251126F0000AD100 /* SceneDelegate.swift */; };
 		73DCFDA1251126F0000AD100 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73DCFD9F251126F0000AD100 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 		7374CBA42521F6D3008FC2F5 /* RecorderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderViewController.swift; sourceTree = "<group>"; };
 		737610142524A8DE0005C741 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		7376103C252528240005C741 /* PersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentContainer.swift; sourceTree = "<group>"; };
+		7376105325265B8A0005C741 /* PathNavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathNavigationHelper.swift; sourceTree = "<group>"; };
 		73DCFD96251126F0000AD100 /* Voices IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Voices IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73DCFD99251126F0000AD100 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73DCFD9B251126F0000AD100 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				737610132524A8DE0005C741 /* Model.xcdatamodeld */,
 				734687D025163A4800A9B6A7 /* VoiceTableViewCell.swift */,
 				7376103C252528240005C741 /* PersistentContainer.swift */,
+				7376105325265B8A0005C741 /* PathNavigationHelper.swift */,
 			);
 			name = Model;
 			path = ..;
@@ -238,6 +241,7 @@
 				73DCFD9C251126F0000AD100 /* SceneDelegate.swift in Sources */,
 				734687D32516433500A9B6A7 /* VoicesTableViewController.swift in Sources */,
 				734687D72517B79200A9B6A7 /* ListeningToolViewController.swift in Sources */,
+				7376105425265B8A0005C741 /* PathNavigationHelper.swift in Sources */,
 				7374CBA52521F6D3008FC2F5 /* RecorderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
