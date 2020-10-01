@@ -19,4 +19,16 @@ class PersistentContainer: NSPersistentContainer {
             print("Error: \(error), \(error.userInfo)")
         }
     }
+    
+    func saveVoice(voiceName: String) {
+        let voice = Voice(context: self.viewContext)
+        voice.title = voiceName
+        voice.filename = voiceName
+        do {
+            try self.viewContext.save()
+        } catch {
+            print(error)
+        }
+    }
+    
 }

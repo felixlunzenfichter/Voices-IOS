@@ -26,16 +26,14 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate {
     
     var duration: Double = 0.0
     
-    
-    
     var audioPlayer: AVAudioPlayer?
     var audioSession: AVAudioSession = AVAudioSession.sharedInstance()
-    
-    var speech : SFSpeechURLRecognitionRequest?
     
     // MARK: - setup
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        #warning("unwrap this safely")
         voiceURL = getVoiceURL(audioFileName: voice.filename!)
         
         setUpAudioSession()
@@ -44,8 +42,7 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate {
         initTimeInfo()
         listeningProgressBar.progress = 0.0
         transcription.numberOfLines = 0
-        
-        recognizeFile(url: voiceURL as URL.ReferenceType)
+        transcribe(url: voiceURL as URL.ReferenceType)
 
     }
 
@@ -56,7 +53,6 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate {
         } catch {
             print(error)
             print("Error initializing player")
-            
         }
     }
     
@@ -134,7 +130,7 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate {
 extension ListeningToolViewController : SFSpeechRecognizerDelegate {
     
     // MARK: - Speech recognition
-    func recognizeFile(url:NSURL) {
+    func transcribe(url:NSURL) {
         guard let myRecognizer = SFSpeechRecognizer() else {
         // A recognizer is not supported for the current locale
             print("Could not create SFpeechRecognizer instance in function recognizeFile().")

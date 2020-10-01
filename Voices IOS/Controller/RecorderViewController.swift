@@ -13,44 +13,27 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate {
     
     var audioSession: AVAudioSession = AVAudioSession.sharedInstance()
     var audioRecorder: AVAudioRecorder?
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let persistentContainer = (UIApplication.shared.delegate as! AppDelegate).persistentContainer
     var audioFileName :String?
 
-    fileprivate func setUpAudioSession() {
-        do {
-            try audioSession.setCategory(.playAndRecord)
-            audioSession.requestRecordPermission(permissionBlock(permissionGranded:))
-        } catch {
-            // Problemo
-        }
-        
-    }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpAudioSession()
     }
     
-    func permissionBlock(permissionGranded: Bool) {
-        DispatchQueue.main.async {
-            if permissionGranded {
-                // good
-                print("permissions granted")
-            } else {
-                print("permissions not granded")
-            }
+    fileprivate func setUpAudioSession() {
+        do {
+            try audioSession.setCategory(.playAndRecord)
+            func emptyPermissionBlock(permissionGranded: Bool) {}
+            audioSession.requestRecordPermission(emptyPermissionBlock(permissionGranded:))
+        } catch {
+            // Problemo
         }
     }
-    
-    func getCurrentTimeStamp() -> String {
-        let date = Date()
-        let df = DateFormatter()
-        df.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        let dateString = df.string(from: date)
-        return dateString
-    }
-    
+}
+
+// MARK:- IBActions
+extension RecorderViewController {
     @IBAction func pressedRecordButton(_ sender: Any) {
         audioFileName = "\(getCurrentTimeStamp()).m4a"
         let audioFilePath = getVoiceURL(audioFileName: audioFileName!)
@@ -71,22 +54,17 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate {
             // not jud
         }
         
-        // Save to database.
-        let voice : Voice = Voice(context: self.context)
-        voice.title = audioFileName
-        voice.filename = audioFileName
-        do {
-            try context.save()
-        } catch {
-            print(error)
-        }
+        persistentContainer.saveVoice(voiceName: audioFileName!)
         
     }
     
     @IBAction func StopRecordingButtonPressed(_ sender: Any) {
         audioRecorder?.stop()
     }
-    
+}
+
+// MARK:- Helper functions.
+extension RecorderViewController {
     func getDocumentsDirectory() -> URL {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
     }
@@ -95,13 +73,15 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate {
         getDocumentsDirectory().appendingPathComponent("\(audioFileName)")
     }
         
-
-
+    func getCurrentTimeStamp() -> String {
+        let date = Date()
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let dateString = df.string(from: date)
+        return dateString
+    }
 }
     
-
-    
-
     /*
     // MARK: - Navigation
 
