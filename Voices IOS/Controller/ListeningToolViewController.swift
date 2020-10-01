@@ -65,17 +65,6 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate {
         }
     }
     
-    func permissionBlock(permissionGranded: Bool) {
-        DispatchQueue.main.async {
-            if permissionGranded {
-                // good
-                print("permissions granted")
-            } else {
-                print("permissions not granded")
-            }
-        }
-    }
-    
     fileprivate func initTimeInfo() {
         timeInfo.text = "0/\(duration)"
     }
@@ -110,7 +99,6 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate {
         let roundedTime = (time * 10).rounded() / 10
         timeInfo.text = "\(roundedTime)/\(duration)"
     }
-
 }
 
 // MARK: - IBActions
