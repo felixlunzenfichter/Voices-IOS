@@ -13,10 +13,11 @@ import CoreData
 class VoicesTableViewController: UITableViewController {
     
     // MARK: - Properties
-    var voices : [URL]!
-    var chosenVoice : URL?
+    var voices: [Voice]!
+    var chosenVoice : Voice?
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    private lazy var persistentContainer: NSPersistentContainer = {
+    private lazy var persistentContainer: PersistentContainer = {
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         return appDelegate!.persistentContainer
     }()
@@ -24,10 +25,22 @@ class VoicesTableViewController: UITableViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        voices = getListOfVoices()
 
         // Uncomment the following line to preserve selection between presentations
          self.clearsSelectionOnViewWillAppear = true
+        
+        fetchVoices()
+    }
+    
+    func fetchVoices() {
+        do {
+            try self.voices = context.fetch(Voice.fetchRequest())
+        } catch {
+            print(error)
+        }
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 
     // MARK: - Table view data source
@@ -54,9 +67,7 @@ class VoicesTableViewController: UITableViewController {
     }
     
     fileprivate func initializeVoiceCell(_ cell: VoiceTableViewCell, _ indexPath: IndexPath) {
-        let timeStamp: String = String(voices[indexPath.row].absoluteString.suffix(23).prefix(19))
-        cell.title.text = timeStamp
-        cell.path = voices[indexPath.row]
+        cell.title.text = voices[indexPath.row].title
     }
     
     // MARK: - Navigation
@@ -64,9 +75,9 @@ class VoicesTableViewController: UITableViewController {
         
         chosenVoice = voices[indexPath.row]
         
-        if let playWindow = storyboard?.instantiateViewController(identifier: "PlayWindow") as? ListeningToolViewController {
-            playWindow.voicePath = chosenVoice
-            navigationController?.pushViewController(playWindow, animated: true)
+        if let ListeningView = storyboard?.instantiateViewController(identifier: "PlayWindow") as? ListeningToolViewController {
+            ListeningView.voice = chosenVoice
+            navigationController?.pushViewController(ListeningView, animated: true)
         }
     }
     
@@ -80,40 +91,7 @@ class VoicesTableViewController: UITableViewController {
             tableView.deselectRow(at: selectedIndexPath, animated: animated)
         }
     }
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            move into trash bin.
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
     
-    @IBAction func refreshButtonPressed(_ sender: Any) {
-        voices = getListOfVoices()
-        self.tableView.reloadData()
-    }
-    
-    // MARK:- Private Methods
-    
-    func getListOfVoices() -> [URL] {
-        let fileManager = FileManager.default
-        let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        var fileURLs : [URL]!
-        do {
-            fileURLs = try fileManager.contentsOfDirectory(at: documentsURL, includingPropertiesForKeys: nil)
-            // process files
-        } catch {
-            print("Error while enumerating files \(documentsURL.path): \(error.localizedDescription)")
-        }
-        return fileURLs
-    }
-
 }
 
 

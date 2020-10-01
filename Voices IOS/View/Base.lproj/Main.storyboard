@@ -266,11 +266,6 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Voices" id="Zbm-Dz-9pb">
-                        <barButtonItem key="leftBarButtonItem" image="arrow.2.circlepath" catalog="system" id="b6W-9x-Ci4">
-                            <connections>
-                                <action selector="refreshButtonPressed:" destination="2Ie-96-eIN" id="An4-An-XUT"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Record new Voice" id="fKg-aU-72k">
                             <connections>
                                 <segue destination="X8F-EP-YIf" kind="show" id="FkO-Ue-IdO"/>
@@ -466,7 +461,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow.2.circlepath" catalog="system" width="128" height="101"/>
         <image name="arrowshape.turn.up.right" catalog="system" width="128" height="106"/>
         <image name="flag" catalog="system" width="128" height="121"/>
         <image name="icloud.and.arrow.down.fill" catalog="system" width="128" height="112"/>

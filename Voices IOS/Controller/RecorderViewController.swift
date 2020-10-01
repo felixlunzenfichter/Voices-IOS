@@ -13,6 +13,8 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate {
     
     var audioSession: AVAudioSession = AVAudioSession.sharedInstance()
     var audioRecorder: AVAudioRecorder?
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var audioFileName :String?
 
     fileprivate func setUpAudioSession() {
         do {
@@ -50,20 +52,8 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     @IBAction func pressedRecordButton(_ sender: Any) {
-        let dateString = getCurrentTimeStamp()
-        
-        let audioFilename = getDocumentsDirectory().appendingPathComponent("\(dateString).m4a")
-        
-        let fileManager = FileManager.default
-        let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        do {
-            let fileURLs = try fileManager.contentsOfDirectory(at: documentsURL, includingPropertiesForKeys: nil)
-            print("files:")
-            print(fileURLs)
-            // process files
-        } catch {
-            print("Error while enumerating files \(documentsURL.path): \(error.localizedDescription)")
-        }
+        audioFileName = "\(getCurrentTimeStamp()).m4a"
+        let audioFilePath = getVoiceURL(audioFileName: audioFileName!)
         
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
@@ -73,23 +63,36 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate {
         ]
         
         do {
-            audioRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
+            audioRecorder = try AVAudioRecorder(url: audioFilePath, settings: settings)
+            print("audioFilename: \(audioFilePath)")
             audioRecorder?.delegate = self
             audioRecorder?.record()
         } catch {
             // not jud
         }
+        
+        // Save to database.
+        let voice : Voice = Voice(context: self.context)
+        voice.title = audioFileName
+        voice.filename = audioFileName
+        do {
+            try context.save()
+        } catch {
+            print(error)
+        }
+        
     }
     
     @IBAction func StopRecordingButtonPressed(_ sender: Any) {
         audioRecorder?.stop()
-        
-//        var voiceTableViewController : VoicesTableViewController = self.parent as! VoicesTableViewController
-//        voiceTableViewController.tableView.reloadData()
     }
     
     func getDocumentsDirectory() -> URL {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+    }
+    
+    func getVoiceURL(audioFileName: String) -> URL {
+        getDocumentsDirectory().appendingPathComponent("\(audioFileName)")
     }
         
 

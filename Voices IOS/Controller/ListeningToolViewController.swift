@@ -19,10 +19,11 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet var timeInfo: UILabel!
     @IBOutlet var transcription: UILabel!
     
-    
     var playing: Bool = false
     
-    var voicePath: URL!
+    var voice: Voice!
+    var voiceURL : URL!
+    
     var duration: Double = 0.0
     
     var updater : CADisplayLink!
@@ -35,6 +36,7 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate {
     // MARK: - setup
     override func viewDidLoad() {
         super.viewDidLoad()
+        voiceURL = getVoiceURL(audioFileName: voice.filename!)
         
         setUpAudioSession()
         initAudioPlayer()
@@ -42,14 +44,14 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate {
         initTimeInfo()
         listeningProgressBar.progress = 0.0
         transcription.numberOfLines = 0
-        recognizeFile(url: voicePath as URL.ReferenceType)
         
+        recognizeFile(url: voiceURL as URL.ReferenceType)
+
     }
 
     fileprivate func initAudioPlayer() {
-        let audioFilename : URL = voicePath
         do {
-            audioPlayer = try AVAudioPlayer(contentsOf: audioFilename)
+            audioPlayer = try AVAudioPlayer(contentsOf: voiceURL)
             audioPlayer?.delegate = self
         } catch {
             print(error)
@@ -100,13 +102,10 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate {
         if (audioPlayer!.isPlaying) {
             audioPlayer?.pause()
             playPauseButton.setImage(#imageLiteral(resourceName: "play_1"), for: .normal)
-            
-//            playPauseButton.setTitle("play" , for: .normal)
         } else {
             audioPlayer?.play()
             playPauseButton.setImage(#imageLiteral(resourceName: "pause_1"), for: .normal)
             handleUIUpdateWhileListening()
-//            playPauseButton.setTitle("pause", for: .normal)
         }
     }
     
@@ -153,7 +152,7 @@ extension ListeningToolViewController : SFSpeechRecognizerDelegate {
         }
         
 
-       let request = SFSpeechURLRecognitionRequest(url:voicePath)
+        let request = SFSpeechURLRecognitionRequest(url: url as URL)
         
         myRecognizer.recognitionTask(with: request) { (result, error) in
             guard let result = result else {
@@ -165,8 +164,17 @@ extension ListeningToolViewController : SFSpeechRecognizerDelegate {
           // Print the speech that has been recognized so far
             if result.isFinal {
                 self.transcription.text = result.bestTranscription.formattedString
+                #warning ("TODO: Save transcript in database.")
             }
        }
+    }
+    
+    func getDocumentsDirectory() -> URL {
+        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+    }
+    
+    func getVoiceURL(audioFileName: String) -> URL {
+        getDocumentsDirectory().appendingPathComponent("\(audioFileName)")
     }
     
 }
