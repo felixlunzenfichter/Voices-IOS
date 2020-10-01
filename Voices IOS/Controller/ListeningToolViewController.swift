@@ -26,7 +26,7 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate {
     
     var duration: Double = 0.0
     
-    var updater : CADisplayLink!
+    
     
     var audioPlayer: AVAudioPlayer?
     var audioSession: AVAudioSession = AVAudioSession.sharedInstance()
@@ -93,7 +93,7 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate {
     
     // MARK: - listening controls.
     fileprivate func handleUIUpdateWhileListening() {
-        updater = CADisplayLink(target: self, selector: #selector(self.listeningProgress))
+        let updater = CADisplayLink(target: self, selector: #selector(self.listeningProgress))
         updater.preferredFramesPerSecond = 60
         updater.add(to: RunLoop.current, forMode: RunLoop.Mode.default)
     }
