@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -268,7 +269,7 @@
                     <navigationItem key="navigationItem" title="Voices" id="Zbm-Dz-9pb">
                         <barButtonItem key="rightBarButtonItem" title="Record new Voice" id="fKg-aU-72k">
                             <connections>
-                                <segue destination="X8F-EP-YIf" kind="show" id="FkO-Ue-IdO"/>
+                                <action selector="RecordNewVoiceButtonPressed:" destination="2Ie-96-eIN" id="eYb-fd-Gci"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -281,7 +282,7 @@
         <!--Recording-->
         <scene sceneID="bDe-6a-gSH">
             <objects>
-                <viewController id="X8F-EP-YIf" customClass="RecorderViewController" customModule="Voices_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecordingView" id="X8F-EP-YIf" customClass="RecorderViewController" customModule="Voices_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FS1-ET-lUn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -352,6 +353,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="THN-aY-Mxc">
+                                <rect key="frame" x="347" y="257" width="47" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="trash.fill" catalog="system" symbolScale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteButtonPushed:" destination="1N9-po-06I" eventType="touchUpInside" id="KMy-VP-cTu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ucT-Sb-xnE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -460,6 +473,7 @@
             <point key="canvasLocation" x="300" y="1357"/>
         </scene>
     </scenes>
+    <color key="tintColor" systemColor="systemTealColor"/>
     <resources>
         <image name="arrowshape.turn.up.right" catalog="system" width="128" height="106"/>
         <image name="flag" catalog="system" width="128" height="121"/>
@@ -470,6 +484,7 @@
         <image name="text.badge.checkmark" catalog="system" width="128" height="109"/>
         <image name="text.badge.xmark" catalog="system" width="128" height="109"/>
         <image name="trash" catalog="system" width="121" height="128"/>
+        <image name="trash.fill" catalog="system" width="121" height="128"/>
         <image name="waveform.circle" catalog="system" width="128" height="121"/>
         <image name="waveform.path" catalog="system" width="128" height="117"/>
         <systemColor name="groupTableViewBackgroundColor">
@@ -489,6 +504,9 @@
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

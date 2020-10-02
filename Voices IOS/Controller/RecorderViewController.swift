@@ -14,7 +14,7 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate {
     var audioSession: AVAudioSession = AVAudioSession.sharedInstance()
     var audioRecorder: AVAudioRecorder?
     let persistentContainer = (UIApplication.shared.delegate as! AppDelegate).persistentContainer
-    var audioFileName :String?
+    var audioFileName: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -13,13 +13,12 @@ import Speech
 class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate {
     
     // MARK:- Properties
-    @IBOutlet var listeningProgressBar: UIProgressView!
     @IBOutlet var playPauseButton: UIButton!
-    @IBOutlet var timeInfo: UILabel!
     @IBOutlet var transcription: UILabel!
+    @IBOutlet var listeningProgressBar: UIProgressView!
+    @IBOutlet var timeInfo: UILabel!
     
-    var playing: Bool = false
-    
+    let persistentContainer = (UIApplication.shared.delegate as! AppDelegate).persistentContainer
     var voice: Voice!
     var voiceURL : URL!
     
@@ -33,26 +32,14 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate {
         super.viewDidLoad()
         
         #warning("unwrap this safely")
-        voiceURL = getVoiceURL(audioFileName: voice.filename!)
+        voiceURL = getVoiceURL(audioFileName: (voice.filename ?? "No file name Found"))
         
         setUpAudioSession()
         initAudioPlayer()
-        setDuration()
-        initTimeInfo()
-        listeningProgressBar.progress = 0.0
-        transcription.numberOfLines = 0
+        
+        UIsetup()
+        
         transcribe(url: voiceURL as URL.ReferenceType)
-
-    }
-
-    fileprivate func initAudioPlayer() {
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOf: voiceURL)
-            audioPlayer?.delegate = self
-        } catch {
-            print(error)
-            print("Error initializing player")
-        }
     }
     
     fileprivate func setUpAudioSession() {
@@ -64,24 +51,69 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate {
             print(error)
         }
     }
-    
-    fileprivate func initTimeInfo() {
-        timeInfo.text = "0/\(duration)"
+
+    fileprivate func initAudioPlayer() {
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: voiceURL)
+            audioPlayer?.delegate = self
+        } catch {
+            print(error)
+            let alert = UIAlertController(title: "Error", message: "Initializing the audio player caused the following error: \(error.localizedDescription)", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        }
+    }
+
+    fileprivate func UIsetup() {
+        setDuration()
+        initTimeInfo()
+        listeningProgressBar.progress = 0.0
+        transcription.numberOfLines = 0
     }
     
     fileprivate func setDuration() {
         duration = ((audioPlayer?.duration ?? 0.0) * 10).rounded() / 10
     }
+
     
-    // MARK: - listening controls.
+    fileprivate func initTimeInfo() {
+        timeInfo.text = "0/\(duration)"
+    }
+}
+
+// MARK:- Actions.
+extension ListeningToolViewController {
+    @IBAction func playButtonPushed(_ sender: Any) {
+        
+        // Unwrap safely.
+        guard let audioPlayer = audioPlayer else {
+            return
+        }
+        
+        if (audioPlayer.isPlaying) {
+            audioPlayer.pause()
+            playPauseButton.setImage(#imageLiteral(resourceName: "play_1"), for: .normal)
+        } else {
+            audioPlayer.play()
+            playPauseButton.setImage(#imageLiteral(resourceName: "pause_1"), for: .normal)
+            handleUIUpdateWhileListening()
+        }
+    }
+    
+    @IBAction func deleteButtonPushed(_ sender: Any) {
+        persistentContainer.deleteVoice(voice: voice)
+        navigationController?.popViewController(animated: true)
+    }
+    
+}
+
+//MARK:- Update UI while playing.
+extension ListeningToolViewController {
+    
     fileprivate func handleUIUpdateWhileListening() {
         let updater = CADisplayLink(target: self, selector: #selector(self.listeningProgress))
         updater.preferredFramesPerSecond = 60
         updater.add(to: RunLoop.current, forMode: RunLoop.Mode.default)
-    }
-    
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        playPauseButton.setImage(#imageLiteral(resourceName: "play_1"), for: .normal)
     }
     
     @objc func listeningProgress()  {
@@ -99,23 +131,13 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate {
         let roundedTime = (time * 10).rounded() / 10
         timeInfo.text = "\(roundedTime)/\(duration)"
     }
-}
-
-// MARK: - IBActions
-extension ListeningToolViewController {
-    @IBAction func playButtonPushed(_ sender: Any) {
-        if (audioPlayer!.isPlaying) {
-            audioPlayer?.pause()
-            playPauseButton.setImage(#imageLiteral(resourceName: "play_1"), for: .normal)
-        } else {
-            audioPlayer?.play()
-            playPauseButton.setImage(#imageLiteral(resourceName: "pause_1"), for: .normal)
-            handleUIUpdateWhileListening()
-        }
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        playPauseButton.setImage(#imageLiteral(resourceName: "play_1"), for: .normal)
     }
 }
 
-// MARK: - Speech recognition
+// MARK: - Speech recognition.
 extension ListeningToolViewController : SFSpeechRecognizerDelegate {
     func transcribe(url:NSURL) {
         guard let myRecognizer = SFSpeechRecognizer() else {
@@ -167,3 +189,4 @@ extension ListeningToolViewController {
 extension Notification.Name {
     static let playPauseEvent = Notification.Name("PlayPauseEvent")
 }
+

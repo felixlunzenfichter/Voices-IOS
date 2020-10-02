@@ -9,7 +9,14 @@
 import UIKit
 import CoreData
 
+protocol ContentUpdateDelegate {
+    func refreshList()
+}
+
 class PersistentContainer: NSPersistentContainer {
+    
+    var listViewDelegate : ContentUpdateDelegate!
+    
     func saveContext(backgroundContext: NSManagedObjectContext? = nil) {
         let context = backgroundContext ?? viewContext
         guard context.hasChanges else { return }
@@ -29,6 +36,13 @@ class PersistentContainer: NSPersistentContainer {
         } catch {
             print(error)
         }
+        listViewDelegate.refreshList()
     }
     
+    func deleteVoice(voice: Voice) {
+        viewContext.delete(voice)
+        listViewDelegate.refreshList()
+    }
 }
+
+

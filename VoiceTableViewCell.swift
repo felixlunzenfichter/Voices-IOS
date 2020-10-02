@@ -13,9 +13,7 @@ class VoiceTableViewCell: UITableViewCell{
     
     // MARK: - Properties
     @IBOutlet var title: UITextField!
-    var path : URL!
     
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
