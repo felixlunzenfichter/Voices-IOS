@@ -59,7 +59,9 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate {
         } catch {
             print(error)
             let alert = UIAlertController(title: "Error", message: "Initializing the audio player caused the following error: \(error.localizedDescription)", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {(action) in
+                self.navigationController?.popViewController(animated: true)
+            }))
             self.present(alert, animated: true)
         }
     }
