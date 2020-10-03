@@ -17,38 +17,16 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate {
     let persistentContainer = (UIApplication.shared.delegate as! AppDelegate).persistentContainer
     var voiceFileName: String?
     
-
     @IBOutlet var recordButton: RecordButton!
-
 
     var progressTimer : Timer!
     var progress : CGFloat! = 0
     
-    func record() {
-        self.progressTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: Selector(("updateProgress")), userInfo: nil, repeats: true)
-    }
-    
-    func updateProgress() {
-        
-        let maxDuration = CGFloat(5) // max duration of the recordButton
-        
-        progress = progress + (CGFloat(0.05) / maxDuration)
-        recordButton.setProgress(progress)
-        
-        if progress >= 1 {
-            progressTimer.invalidate()
-        }
-        
-    }
-    
-    func stop() {
-        self.progressTimer.invalidate()
-    }
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpAudioSession()
+        recordButton.addTarget(self, action: #selector(self.record), for: .touchDown)
+        recordButton.addTarget(self, action: #selector(self.stop), for: UIControl.Event.touchUpInside)
     }
     
     fileprivate func setUpAudioSession() {
@@ -97,9 +75,31 @@ extension RecorderViewController {
     @IBAction func recordButtonPressed(_ sender: Any) {
         if audioRecorder == nil {
             startRecording()
+            record()
         } else {
             stopRecording()
         }
+    }
+    
+    @objc func record() {
+        self.progressTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: Selector(("updateProgress")), userInfo: nil, repeats: true)
+    }
+    
+    @objc func updateProgress() {
+        
+        let maxDuration = CGFloat(120) // max duration of the recordButton
+        
+        progress = progress + (CGFloat(0.05) / maxDuration)
+        recordButton.setProgress(progress)
+        
+        if progress >= 1 {
+            progressTimer.invalidate()
+        }
+        
+    }
+    
+    @objc func stop() {
+        self.progressTimer.invalidate()
     }
 
 }
