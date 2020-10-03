@@ -14,6 +14,8 @@
 		737610152524A8DE0005C741 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 737610132524A8DE0005C741 /* Model.xcdatamodeld */; };
 		7376103D252528240005C741 /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7376103C252528240005C741 /* PersistentContainer.swift */; };
 		7376105425265B8A0005C741 /* PathNavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7376105325265B8A0005C741 /* PathNavigationHelper.swift */; };
+		73761063252797080005C741 /* Voices_IOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73761062252797080005C741 /* Voices_IOSTests.swift */; };
+		7376107325279C090005C741 /* Voices_IOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7376107225279C090005C741 /* Voices_IOSUITests.swift */; };
 		73DCFD9A251126F0000AD100 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DCFD99251126F0000AD100 /* AppDelegate.swift */; };
 		73DCFD9C251126F0000AD100 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DCFD9B251126F0000AD100 /* SceneDelegate.swift */; };
 		73DCFDA1251126F0000AD100 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73DCFD9F251126F0000AD100 /* Main.storyboard */; };
@@ -21,6 +23,23 @@
 		73DCFDA6251126F1000AD100 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73DCFDA4251126F1000AD100 /* LaunchScreen.storyboard */; };
 		F0FDCD487B6A23D2DA3248F6 /* Pods_Voices_IOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7E73C1ACB86ECDD26406A58 /* Pods_Voices_IOS.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		73761065252797080005C741 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73DCFD8E251126F0000AD100 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 73DCFD95251126F0000AD100;
+			remoteInfo = "Voices IOS";
+		};
+		7376107525279C090005C741 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73DCFD8E251126F0000AD100 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 73DCFD95251126F0000AD100;
+			remoteInfo = "Voices IOS";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		6745F1876018729803A35D81 /* Pods-Voices IOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voices IOS.release.xcconfig"; path = "Target Support Files/Pods-Voices IOS/Pods-Voices IOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -31,6 +50,12 @@
 		737610142524A8DE0005C741 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		7376103C252528240005C741 /* PersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentContainer.swift; sourceTree = "<group>"; };
 		7376105325265B8A0005C741 /* PathNavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathNavigationHelper.swift; sourceTree = "<group>"; };
+		73761060252797080005C741 /* Voices IOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Voices IOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		73761062252797080005C741 /* Voices_IOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voices_IOSTests.swift; sourceTree = "<group>"; };
+		73761064252797080005C741 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7376107025279C090005C741 /* Voices IOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Voices IOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7376107225279C090005C741 /* Voices_IOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voices_IOSUITests.swift; sourceTree = "<group>"; };
+		7376107425279C090005C741 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73DCFD96251126F0000AD100 /* Voices IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Voices IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73DCFD99251126F0000AD100 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73DCFD9B251126F0000AD100 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +68,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7376105D252797080005C741 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7376106D25279C090005C741 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		73DCFD93251126F0000AD100 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -87,10 +126,30 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		73761061252797080005C741 /* Voices IOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				73761062252797080005C741 /* Voices_IOSTests.swift */,
+				73761064252797080005C741 /* Info.plist */,
+			);
+			path = "Voices IOSTests";
+			sourceTree = "<group>";
+		};
+		7376107125279C090005C741 /* Voices IOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7376107225279C090005C741 /* Voices_IOSUITests.swift */,
+				7376107425279C090005C741 /* Info.plist */,
+			);
+			path = "Voices IOSUITests";
+			sourceTree = "<group>";
+		};
 		73DCFD8D251126F0000AD100 = {
 			isa = PBXGroup;
 			children = (
 				73DCFD98251126F0000AD100 /* Voices IOS */,
+				73761061252797080005C741 /* Voices IOSTests */,
+				7376107125279C090005C741 /* Voices IOSUITests */,
 				73DCFD97251126F0000AD100 /* Products */,
 				DDB87475651B0AF09B76C6ED /* Pods */,
 				E538DE19B256468050F899CA /* Frameworks */,
@@ -101,6 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				73DCFD96251126F0000AD100 /* Voices IOS.app */,
+				73761060252797080005C741 /* Voices IOSTests.xctest */,
+				7376107025279C090005C741 /* Voices IOSUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -137,6 +198,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7376105F252797080005C741 /* Voices IOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 73761069252797080005C741 /* Build configuration list for PBXNativeTarget "Voices IOSTests" */;
+			buildPhases = (
+				7376105C252797080005C741 /* Sources */,
+				7376105D252797080005C741 /* Frameworks */,
+				7376105E252797080005C741 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				73761066252797080005C741 /* PBXTargetDependency */,
+			);
+			name = "Voices IOSTests";
+			productName = "Voices IOSTests";
+			productReference = 73761060252797080005C741 /* Voices IOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7376106F25279C090005C741 /* Voices IOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7376107725279C090005C741 /* Build configuration list for PBXNativeTarget "Voices IOSUITests" */;
+			buildPhases = (
+				7376106C25279C090005C741 /* Sources */,
+				7376106D25279C090005C741 /* Frameworks */,
+				7376106E25279C090005C741 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7376107625279C090005C741 /* PBXTargetDependency */,
+			);
+			name = "Voices IOSUITests";
+			productName = "Voices IOSUITests";
+			productReference = 7376107025279C090005C741 /* Voices IOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		73DCFD95251126F0000AD100 /* Voices IOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 73DCFDAA251126F1000AD100 /* Build configuration list for PBXNativeTarget "Voices IOS" */;
@@ -145,6 +242,7 @@
 				73DCFD92251126F0000AD100 /* Sources */,
 				73DCFD93251126F0000AD100 /* Frameworks */,
 				73DCFD94251126F0000AD100 /* Resources */,
+				B1B8C43E83D2A8E23F50C443 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -164,10 +262,18 @@
 				KnownAssetTags = (
 					"Test record and play",
 				);
-				LastSwiftUpdateCheck = 1160;
-				LastUpgradeCheck = 1160;
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Felix Lunzenfichter";
 				TargetAttributes = {
+					7376105F252797080005C741 = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = 73DCFD95251126F0000AD100;
+					};
+					7376106F25279C090005C741 = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = 73DCFD95251126F0000AD100;
+					};
 					73DCFD95251126F0000AD100 = {
 						CreatedOnToolsVersion = 11.6;
 					};
@@ -187,11 +293,27 @@
 			projectRoot = "";
 			targets = (
 				73DCFD95251126F0000AD100 /* Voices IOS */,
+				7376105F252797080005C741 /* Voices IOSTests */,
+				7376106F25279C090005C741 /* Voices IOSUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7376105E252797080005C741 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7376106E25279C090005C741 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		73DCFD94251126F0000AD100 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -227,9 +349,42 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B1B8C43E83D2A8E23F50C443 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Voices IOS/Pods-Voices IOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Voices IOS/Pods-Voices IOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Voices IOS/Pods-Voices IOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7376105C252797080005C741 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73761063252797080005C741 /* Voices_IOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7376106C25279C090005C741 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7376107325279C090005C741 /* Voices_IOSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		73DCFD92251126F0000AD100 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -247,6 +402,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		73761066252797080005C741 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 73DCFD95251126F0000AD100 /* Voices IOS */;
+			targetProxy = 73761065252797080005C741 /* PBXContainerItemProxy */;
+		};
+		7376107625279C090005C741 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 73DCFD95251126F0000AD100 /* Voices IOS */;
+			targetProxy = 7376107525279C090005C741 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		73DCFD9F251126F0000AD100 /* Main.storyboard */ = {
@@ -268,6 +436,92 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		73761067252797080005C741 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W26GVS4M5S;
+				INFOPLIST_FILE = "Voices IOSTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.connect.Voices-IOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Voices IOS.app/Voices IOS";
+			};
+			name = Debug;
+		};
+		73761068252797080005C741 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W26GVS4M5S;
+				INFOPLIST_FILE = "Voices IOSTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.connect.Voices-IOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Voices IOS.app/Voices IOS";
+			};
+			name = Release;
+		};
+		7376107825279C090005C741 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W26GVS4M5S;
+				INFOPLIST_FILE = "Voices IOSUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.connect.Voices-IOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Voices IOS";
+			};
+			name = Debug;
+		};
+		7376107925279C090005C741 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W26GVS4M5S;
+				INFOPLIST_FILE = "Voices IOSUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.connect.Voices-IOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Voices IOS";
+			};
+			name = Release;
+		};
 		73DCFDA8251126F1000AD100 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -294,6 +548,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -354,6 +609,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -423,6 +679,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		73761069252797080005C741 /* Build configuration list for PBXNativeTarget "Voices IOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73761067252797080005C741 /* Debug */,
+				73761068252797080005C741 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7376107725279C090005C741 /* Build configuration list for PBXNativeTarget "Voices IOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7376107825279C090005C741 /* Debug */,
+				7376107925279C090005C741 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		73DCFD91251126F0000AD100 /* Build configuration list for PBXProject "Voices IOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

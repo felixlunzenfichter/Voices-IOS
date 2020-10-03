@@ -8,5 +8,6 @@ target 'Voices IOS' do
   use_frameworks!
 
   # Pods for Voices IOS
+  pod "RecordButtonSwift"
 
 end

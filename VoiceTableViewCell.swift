@@ -12,7 +12,7 @@ import AVFoundation
 class VoiceTableViewCell: UITableViewCell{
     
     // MARK: - Properties
-    @IBOutlet var title: UITextField!
+    @IBOutlet var title: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

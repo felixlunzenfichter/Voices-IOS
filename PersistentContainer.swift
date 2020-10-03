@@ -41,6 +41,11 @@ class PersistentContainer: NSPersistentContainer {
     
     func deleteVoice(voice: Voice) {
         viewContext.delete(voice)
+        do {
+            try viewContext.save()
+        } catch {
+            print(error)
+        }
         listViewDelegate.refreshList()
     }
 }

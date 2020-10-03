@@ -242,21 +242,23 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="98"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="some text" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" background="play_1" translatesAutoresizingMaskIntoConstraints="NO" id="OYN-0B-26M">
-                                            <rect key="frame" x="302" y="16" width="92" height="66"/>
-                                            <accessibility key="accessibilityConfiguration" identifier="VoiceCell"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swc-lc-WZ4">
+                                            <rect key="frame" x="30" y="26" width="374" height="45"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="OYN-0B-26M" firstAttribute="top" secondItem="AK5-tO-NcI" secondAttribute="topMargin" constant="5" id="2Mh-sT-5Sw"/>
-                                        <constraint firstAttribute="trailing" secondItem="OYN-0B-26M" secondAttribute="trailing" constant="20" id="H5E-id-OlX"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="OYN-0B-26M" secondAttribute="bottom" constant="5" id="Qfl-PL-FU6"/>
+                                        <constraint firstItem="swc-lc-WZ4" firstAttribute="top" secondItem="AK5-tO-NcI" secondAttribute="topMargin" constant="15" id="QNO-aS-qvm"/>
+                                        <constraint firstItem="swc-lc-WZ4" firstAttribute="leading" secondItem="AK5-tO-NcI" secondAttribute="leadingMargin" constant="10" id="WMt-mO-Hc0"/>
+                                        <constraint firstItem="swc-lc-WZ4" firstAttribute="trailing" secondItem="AK5-tO-NcI" secondAttribute="trailingMargin" constant="10" id="d87-O9-i5t"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="swc-lc-WZ4" secondAttribute="bottom" constant="16" id="m7S-5S-B4J"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="title" destination="OYN-0B-26M" id="X62-bP-yde"/>
+                                    <outlet property="title" destination="swc-lc-WZ4" id="Pf1-52-6WJ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -287,31 +289,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wjT-m6-8I6">
-                                <rect key="frame" x="107" y="201" width="49" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Record"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NmJ-IK-9rD" customClass="RecordButton" customModule="RecordButtonSwift">
+                                <rect key="frame" x="107" y="587" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Yv9-fR-dzk"/>
+                                    <constraint firstAttribute="width" constant="200" id="uIU-jK-U8w"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="progressColor">
+                                        <color key="value" systemColor="systemPinkColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="systemBlueColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                        <color key="value" systemColor="systemTealColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="pressedRecordButton:" destination="X8F-EP-YIf" eventType="touchUpInside" id="3mP-09-fvg"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="szl-T9-c6Z">
-                                <rect key="frame" x="234" y="201" width="106" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Stop Recording"/>
-                                <connections>
-                                    <action selector="StopRecordingButtonPressed:" destination="X8F-EP-YIf" eventType="touchUpInside" id="mRw-0R-Jc3"/>
+                                    <action selector="recordButtonPressed:" destination="X8F-EP-YIf" eventType="touchUpInside" id="bHz-eG-uDN"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="420-qp-RIW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NmJ-IK-9rD" firstAttribute="centerX" secondItem="420-qp-RIW" secondAttribute="centerX" id="Mmd-8T-bH4"/>
+                            <constraint firstItem="420-qp-RIW" firstAttribute="bottom" secondItem="NmJ-IK-9rD" secondAttribute="bottom" constant="75" id="lis-5Z-xxp"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Recording" id="W3m-LO-3sK"/>
+                    <connections>
+                        <outlet property="recordButton" destination="NmJ-IK-9rD" id="qmv-19-7vY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CNh-JD-hMm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-107" y="2871"/>
+            <point key="canvasLocation" x="-107.24637681159422" y="2870.7589285714284"/>
         </scene>
         <!--Listening-->
         <scene sceneID="QJ3-xi-GVY">
@@ -347,15 +361,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting for transcription." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZf-fg-EdP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a language and hit the transcribe button." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZf-fg-EdP">
                                 <rect key="frame" x="20" y="523" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="THN-aY-Mxc">
-                                <rect key="frame" x="347" y="257" width="47" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="THN-aY-Mxc">
+                                <rect key="frame" x="370" y="762.5" width="24" height="25.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="tintColor" systemColor="systemRedColor"/>
                                 <state key="normal">
@@ -365,18 +378,29 @@
                                     <action selector="deleteButtonPushed:" destination="1N9-po-06I" eventType="touchUpInside" id="KMy-VP-cTu"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6p-Ct-uaH">
+                                <rect key="frame" x="20" y="454" width="70" height="30"/>
+                                <state key="normal" title="transcribe"/>
+                                <connections>
+                                    <action selector="transcribeButtonPushed:" destination="1N9-po-06I" eventType="touchUpInside" id="WJh-iC-HZ6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ucT-Sb-xnE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ucT-Sb-xnE" firstAttribute="bottom" secondItem="lm2-ck-Rwc" secondAttribute="bottom" constant="25" id="7xz-p2-z7p"/>
                             <constraint firstItem="FaP-GC-HuJ" firstAttribute="leading" secondItem="ucT-Sb-xnE" secondAttribute="leading" constant="20" id="9bL-ip-b0l"/>
+                            <constraint firstItem="t6p-Ct-uaH" firstAttribute="leading" secondItem="ucT-Sb-xnE" secondAttribute="leading" constant="20" id="9fS-fl-496"/>
+                            <constraint firstItem="ucT-Sb-xnE" firstAttribute="bottom" secondItem="THN-aY-Mxc" secondAttribute="bottom" constant="25" id="EKf-I8-ggy"/>
                             <constraint firstItem="FaP-GC-HuJ" firstAttribute="top" secondItem="kZf-fg-EdP" secondAttribute="bottom" constant="20" id="J1E-yF-FQq"/>
                             <constraint firstItem="ucT-Sb-xnE" firstAttribute="trailing" secondItem="kZf-fg-EdP" secondAttribute="trailing" constant="20" id="LCy-bZ-eUB"/>
                             <constraint firstItem="ucT-Sb-xnE" firstAttribute="trailing" secondItem="FaP-GC-HuJ" secondAttribute="trailing" constant="20" id="Oe7-cu-ZT7"/>
                             <constraint firstItem="kZf-fg-EdP" firstAttribute="leading" secondItem="ucT-Sb-xnE" secondAttribute="leading" constant="20" id="QSW-bO-L2T"/>
                             <constraint firstItem="cyd-ti-orb" firstAttribute="top" secondItem="FaP-GC-HuJ" secondAttribute="bottom" constant="5" id="Ti2-Fk-9v7"/>
                             <constraint firstItem="kZf-fg-EdP" firstAttribute="top" secondItem="C78-DK-1uR" secondAttribute="bottom" constant="10" id="UFi-Xa-bwB"/>
+                            <constraint firstItem="ucT-Sb-xnE" firstAttribute="trailing" secondItem="THN-aY-Mxc" secondAttribute="trailing" constant="20" id="e2W-wW-hxX"/>
+                            <constraint firstItem="C78-DK-1uR" firstAttribute="top" secondItem="t6p-Ct-uaH" secondAttribute="bottom" constant="8" symbolic="YES" id="jig-Eh-hfV"/>
                             <constraint firstItem="lm2-ck-Rwc" firstAttribute="top" secondItem="FaP-GC-HuJ" secondAttribute="bottom" constant="20" id="mlJ-k2-Ue9"/>
                             <constraint firstItem="C78-DK-1uR" firstAttribute="leading" secondItem="ucT-Sb-xnE" secondAttribute="leading" constant="20" id="pIp-o0-Hb1"/>
                             <constraint firstItem="lm2-ck-Rwc" firstAttribute="leading" secondItem="ucT-Sb-xnE" secondAttribute="leading" constant="25" id="t8N-eW-GJM"/>
@@ -472,7 +496,26 @@
             </objects>
             <point key="canvasLocation" x="300" y="1357"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="rfP-v7-ehz">
+            <objects>
+                <viewController id="zEq-4a-uBG" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oKs-FY-3Yg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Su-ND-Fdd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-648" y="2839"/>
+        </scene>
     </scenes>
+    <designables>
+        <designable name="NmJ-IK-9rD">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+    </designables>
     <color key="tintColor" systemColor="systemTealColor"/>
     <resources>
         <image name="arrowshape.turn.up.right" catalog="system" width="128" height="106"/>
@@ -504,6 +547,9 @@
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

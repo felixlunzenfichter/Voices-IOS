@@ -7,73 +7,218 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B667200A42E482FF0C51D9F77C82BAF /* Pods-Voices IOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EF1AF5295E6A7F4E851245A3863927E8 /* Pods-Voices IOS-dummy.m */; };
-		67F0FD94C8DBEC903B57C31B2FA7D4E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		CCF0DEFF2B63C5235D3A2159AE9EB217 /* Pods-Voices IOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D550E05C1B4341904B5021116BE58A75 /* Pods-Voices IOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0BFBE860A14C087585738A490F23EB8F /* RecordButtonKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA4B89ABFD74022F635F3A21DD86737 /* RecordButtonKit.swift */; };
+		0F649E08CD3ABEF57DBDC9945C149526 /* PRTween-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B1B0F7418D38A9CA421EC6ACC13D16 /* PRTween-dummy.m */; };
+		1104FDD8A47DC37DC99E84605BD21A64 /* PRTweenTimingFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BC19640DB57D9706122B9C21F78968 /* PRTweenTimingFunctions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		515DCC24D134C2B5A930F78B7901AB31 /* PRTweenTimingFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2695D0F4EEC4C7D2272B3C1EB6F17172 /* PRTweenTimingFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		60EDB7B58FCE4A541464F570AFB74779 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 499296F45CC9366A36A34450CCC42962 /* Foundation.framework */; };
+		6B6B1B4E386A64E82BC010FC92769F2F /* PRTween.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F8576752876507029D56AFE43BA7317 /* PRTween.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7395D387552A1E7B1B47A9B438671501 /* PRTween-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F93E69A13F2DCFC46D022FBEDC9E95C6 /* PRTween-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EB274FA31AE4B1EDC9292F4594C5C5C /* Pods-Voices IOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A57ACCFECB5CEC9C96E7D0CB411DAE /* Pods-Voices IOS-dummy.m */; };
+		A0BE0266010D9E134B8421D8EB1F340A /* RecordButtonSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 23B8F9EEC2BF5663FB8E16D7D14E35B5 /* RecordButtonSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A5A7E0C70F5F30EABDC70751124989CB /* PRTween.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1723ED0D5C35A71369F2AD21088869 /* PRTween.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A744D1823F87142A0DDCB328766F93CC /* RecordButtonKit.pcvd in Resources */ = {isa = PBXBuildFile; fileRef = 580E44AFAAF3918C105EAFEEBD32FA99 /* RecordButtonKit.pcvd */; };
+		AE7064598E19E8C384B6BAB46ED01CE1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 499296F45CC9366A36A34450CCC42962 /* Foundation.framework */; };
+		C0D65032D0682D6FCE719303DC4F0F8E /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE2E42D90AE81704D632DE3D487FEE7 /* RecordButton.swift */; };
+		C5240F930E69322812EBEEF43BD048EB /* RecordButtonSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A7537FB1D740D3B5C03DDABF72E0E58 /* RecordButtonSwift-dummy.m */; };
+		C73E7E865C84936FD8115BC5059C3B90 /* PRTween.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7577DDC422D0D9697235F99C0CB9295A /* PRTween.framework */; };
+		D303E6DBEFF268AC0238180E30A2ADDB /* StopRecording.aiff in Resources */ = {isa = PBXBuildFile; fileRef = A6D69F09B5C38721E411854D72BD5691 /* StopRecording.aiff */; };
+		DE50BA2F5CD2165217AE5855581E41FB /* Pods-Voices IOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6400F7E0963B5A768C098403C42AA54A /* Pods-Voices IOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E767447C527C17268A96787ADAC7158D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 499296F45CC9366A36A34450CCC42962 /* Foundation.framework */; };
+		FFAD70C37E1105B1C6333360EC62C33D /* StartRecording.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 3021874BAEC19081CDC50F87F48F2B5F /* StartRecording.aiff */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		027E8DF6016B92AECBE465832591C1C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 75CA230D0637BEBCCBE6371A0E6B5B6B;
+			remoteInfo = PRTween;
+		};
+		1FF2DDC0D9C6A237AA0097A63358EFFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4035FA6DDA37AC0E44212DF227951EE7;
+			remoteInfo = RecordButtonSwift;
+		};
+		667066AE122FFC5142BA49F3CDA4C053 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 75CA230D0637BEBCCBE6371A0E6B5B6B;
+			remoteInfo = PRTween;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		0510E87AEC092B964A42AE2EE3BA9F09 /* Pods-Voices IOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Voices IOS-acknowledgements.plist"; sourceTree = "<group>"; };
-		29EE9CA4F7B23230842D05604740D756 /* Pods-Voices IOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Voices IOS.modulemap"; sourceTree = "<group>"; };
-		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		B2E95A1090F43ED39213433BEAC9A655 /* Pods-Voices IOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Voices IOS-Info.plist"; sourceTree = "<group>"; };
-		C8A821B4FE4838909501693A855DF41D /* Pods-Voices IOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Voices IOS.debug.xcconfig"; sourceTree = "<group>"; };
-		D550E05C1B4341904B5021116BE58A75 /* Pods-Voices IOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Voices IOS-umbrella.h"; sourceTree = "<group>"; };
-		D72F596236AFB0AC6271982433660868 /* Pods-Voices IOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Voices IOS-acknowledgements.markdown"; sourceTree = "<group>"; };
-		E05A941C48DA93810D2852B417E71BE0 /* Pods-Voices IOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Voices IOS.release.xcconfig"; sourceTree = "<group>"; };
-		EAF201D49A65DB6E92B28B77ED27F4DD /* Pods_Voices_IOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Voices_IOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EF1AF5295E6A7F4E851245A3863927E8 /* Pods-Voices IOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Voices IOS-dummy.m"; sourceTree = "<group>"; };
+		0454892560C24500050A1B2144DB897C /* RecordButtonSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RecordButtonSwift.release.xcconfig; sourceTree = "<group>"; };
+		09D3764DB32A94AFBBE78CA6D19695E4 /* RecordButtonSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RecordButtonSwift-prefix.pch"; sourceTree = "<group>"; };
+		0D57FB32A500CE13F1A6DE361DCE426A /* PRTween.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PRTween.modulemap; sourceTree = "<group>"; };
+		15D953131BF414BD8B3D1E33FD21D02A /* RecordButtonSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RecordButtonSwift.modulemap; sourceTree = "<group>"; };
+		1A555E47F79CF26C4C7D2DC42D8F8887 /* Pods-Voices IOS-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Voices IOS-frameworks.sh"; sourceTree = "<group>"; };
+		23B8F9EEC2BF5663FB8E16D7D14E35B5 /* RecordButtonSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RecordButtonSwift-umbrella.h"; sourceTree = "<group>"; };
+		2695D0F4EEC4C7D2272B3C1EB6F17172 /* PRTweenTimingFunctions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PRTweenTimingFunctions.h; path = lib/PRTweenTimingFunctions.h; sourceTree = "<group>"; };
+		2B0F82C53C7C95488FFC00EA74D84150 /* PRTween-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PRTween-Info.plist"; sourceTree = "<group>"; };
+		3021874BAEC19081CDC50F87F48F2B5F /* StartRecording.aiff */ = {isa = PBXFileReference; includeInIndex = 1; name = StartRecording.aiff; path = RecordButton/Assets/StartRecording.aiff; sourceTree = "<group>"; };
+		44BBBE133749497EC17AEAC34886B8D0 /* Pods-Voices IOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Voices IOS-acknowledgements.plist"; sourceTree = "<group>"; };
+		499296F45CC9366A36A34450CCC42962 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		4F8576752876507029D56AFE43BA7317 /* PRTween.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PRTween.h; path = lib/PRTween.h; sourceTree = "<group>"; };
+		4FA39B3B287E0FDB3DB1D660FC5CFAAF /* Pods-Voices IOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Voices IOS.debug.xcconfig"; sourceTree = "<group>"; };
+		51A57ACCFECB5CEC9C96E7D0CB411DAE /* Pods-Voices IOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Voices IOS-dummy.m"; sourceTree = "<group>"; };
+		57276D845A67A5C5E5999BA3F8626387 /* PRTween-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PRTween-prefix.pch"; sourceTree = "<group>"; };
+		580E44AFAAF3918C105EAFEEBD32FA99 /* RecordButtonKit.pcvd */ = {isa = PBXFileReference; includeInIndex = 1; name = RecordButtonKit.pcvd; path = RecordButton/Assets/RecordButtonKit.pcvd; sourceTree = "<group>"; };
+		6400F7E0963B5A768C098403C42AA54A /* Pods-Voices IOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Voices IOS-umbrella.h"; sourceTree = "<group>"; };
+		6D575B2E9E3C96BC3726F23A3746AD0A /* RecordButtonSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RecordButtonSwift.framework; path = RecordButtonSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E87F128D99E2CC3AFB7243CE45DE0C4 /* PRTween.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PRTween.framework; path = PRTween.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		71BC19640DB57D9706122B9C21F78968 /* PRTweenTimingFunctions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PRTweenTimingFunctions.m; path = lib/PRTweenTimingFunctions.m; sourceTree = "<group>"; };
+		7577DDC422D0D9697235F99C0CB9295A /* PRTween.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PRTween.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78CC2BF21C759D6B4EEAD0D80AFD4F57 /* Pods-Voices IOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Voices IOS.modulemap"; sourceTree = "<group>"; };
+		7A7537FB1D740D3B5C03DDABF72E0E58 /* RecordButtonSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RecordButtonSwift-dummy.m"; sourceTree = "<group>"; };
+		8BE2E42D90AE81704D632DE3D487FEE7 /* RecordButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RecordButton.swift; path = RecordButton/Classes/RecordButton.swift; sourceTree = "<group>"; };
+		8C1723ED0D5C35A71369F2AD21088869 /* PRTween.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PRTween.m; path = lib/PRTween.m; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9DA4B89ABFD74022F635F3A21DD86737 /* RecordButtonKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RecordButtonKit.swift; path = RecordButton/Classes/RecordButtonKit.swift; sourceTree = "<group>"; };
+		9DFD42D5C0A0AD7B93D8204070ADB00B /* Pods-Voices IOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Voices IOS.release.xcconfig"; sourceTree = "<group>"; };
+		A07BADD4DC22A147457C0EDF25678A82 /* PRTween.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PRTween.release.xcconfig; sourceTree = "<group>"; };
+		A6D69F09B5C38721E411854D72BD5691 /* StopRecording.aiff */ = {isa = PBXFileReference; includeInIndex = 1; name = StopRecording.aiff; path = RecordButton/Assets/StopRecording.aiff; sourceTree = "<group>"; };
+		C2C2FBC14A775D526D0A9C8F3FA3FEFD /* Pods-Voices IOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Voices IOS-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D6158461884F5BBB4E8AF8E11C72554E /* RecordButtonSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "RecordButtonSwift-Info.plist"; sourceTree = "<group>"; };
+		D76172F816FE642E8B5768A029C6C676 /* PRTween.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PRTween.debug.xcconfig; sourceTree = "<group>"; };
+		E68F29E4C7E2528956EB1623D52C1E47 /* RecordButtonSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RecordButtonSwift.debug.xcconfig; sourceTree = "<group>"; };
+		E7B1B0F7418D38A9CA421EC6ACC13D16 /* PRTween-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PRTween-dummy.m"; sourceTree = "<group>"; };
+		EAF201D49A65DB6E92B28B77ED27F4DD /* Pods_Voices_IOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Voices_IOS.framework; path = "Pods-Voices IOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F93E69A13F2DCFC46D022FBEDC9E95C6 /* PRTween-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PRTween-umbrella.h"; sourceTree = "<group>"; };
+		FC312C09B27D22DB2C013BCB9A2170BC /* Pods-Voices IOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Voices IOS-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F676B5AA5E9E73EE7E38601D0FFC81C7 /* Frameworks */ = {
+		0581660BDC06175CB1254C62323D6C13 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67F0FD94C8DBEC903B57C31B2FA7D4E1 /* Foundation.framework in Frameworks */,
+				60EDB7B58FCE4A541464F570AFB74779 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3E27630D0EDF449F22F7AF9501A0521 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE7064598E19E8C384B6BAB46ED01CE1 /* Foundation.framework in Frameworks */,
+				C73E7E865C84936FD8115BC5059C3B90 /* PRTween.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D416FCCD8627F0D38939F4FC904D1342 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E767447C527C17268A96787ADAC7158D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		04115376EEAEBA31DB8BB15FD7BBE1BF /* Pods-Voices IOS */ = {
+		23CBB594E4D152BD6A925A5546DEDF96 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				29EE9CA4F7B23230842D05604740D756 /* Pods-Voices IOS.modulemap */,
-				D72F596236AFB0AC6271982433660868 /* Pods-Voices IOS-acknowledgements.markdown */,
-				0510E87AEC092B964A42AE2EE3BA9F09 /* Pods-Voices IOS-acknowledgements.plist */,
-				EF1AF5295E6A7F4E851245A3863927E8 /* Pods-Voices IOS-dummy.m */,
-				B2E95A1090F43ED39213433BEAC9A655 /* Pods-Voices IOS-Info.plist */,
-				D550E05C1B4341904B5021116BE58A75 /* Pods-Voices IOS-umbrella.h */,
-				C8A821B4FE4838909501693A855DF41D /* Pods-Voices IOS.debug.xcconfig */,
-				E05A941C48DA93810D2852B417E71BE0 /* Pods-Voices IOS.release.xcconfig */,
+				57A0DC7DA5CEC19DDA27D537FABC8410 /* Pods-Voices IOS */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		2A6E9AB1E80151413BC1DDA06237BD0E /* RecordButtonSwift */ = {
+			isa = PBXGroup;
+			children = (
+				8BE2E42D90AE81704D632DE3D487FEE7 /* RecordButton.swift */,
+				9DA4B89ABFD74022F635F3A21DD86737 /* RecordButtonKit.swift */,
+				9C2848FA4BA23C87282869FC704A32EF /* Resources */,
+				594F1DED24F3E391C09528DE6732A855 /* Support Files */,
+			);
+			name = RecordButtonSwift;
+			path = RecordButtonSwift;
+			sourceTree = "<group>";
+		};
+		57A0DC7DA5CEC19DDA27D537FABC8410 /* Pods-Voices IOS */ = {
+			isa = PBXGroup;
+			children = (
+				78CC2BF21C759D6B4EEAD0D80AFD4F57 /* Pods-Voices IOS.modulemap */,
+				C2C2FBC14A775D526D0A9C8F3FA3FEFD /* Pods-Voices IOS-acknowledgements.markdown */,
+				44BBBE133749497EC17AEAC34886B8D0 /* Pods-Voices IOS-acknowledgements.plist */,
+				51A57ACCFECB5CEC9C96E7D0CB411DAE /* Pods-Voices IOS-dummy.m */,
+				1A555E47F79CF26C4C7D2DC42D8F8887 /* Pods-Voices IOS-frameworks.sh */,
+				FC312C09B27D22DB2C013BCB9A2170BC /* Pods-Voices IOS-Info.plist */,
+				6400F7E0963B5A768C098403C42AA54A /* Pods-Voices IOS-umbrella.h */,
+				4FA39B3B287E0FDB3DB1D660FC5CFAAF /* Pods-Voices IOS.debug.xcconfig */,
+				9DFD42D5C0A0AD7B93D8204070ADB00B /* Pods-Voices IOS.release.xcconfig */,
 			);
 			name = "Pods-Voices IOS";
 			path = "Target Support Files/Pods-Voices IOS";
 			sourceTree = "<group>";
 		};
-		6433F35E264C19F52A27EAE80FD76069 /* Targets Support Files */ = {
+		594F1DED24F3E391C09528DE6732A855 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				04115376EEAEBA31DB8BB15FD7BBE1BF /* Pods-Voices IOS */,
+				15D953131BF414BD8B3D1E33FD21D02A /* RecordButtonSwift.modulemap */,
+				7A7537FB1D740D3B5C03DDABF72E0E58 /* RecordButtonSwift-dummy.m */,
+				D6158461884F5BBB4E8AF8E11C72554E /* RecordButtonSwift-Info.plist */,
+				09D3764DB32A94AFBBE78CA6D19695E4 /* RecordButtonSwift-prefix.pch */,
+				23B8F9EEC2BF5663FB8E16D7D14E35B5 /* RecordButtonSwift-umbrella.h */,
+				E68F29E4C7E2528956EB1623D52C1E47 /* RecordButtonSwift.debug.xcconfig */,
+				0454892560C24500050A1B2144DB897C /* RecordButtonSwift.release.xcconfig */,
 			);
-			name = "Targets Support Files";
+			name = "Support Files";
+			path = "../Target Support Files/RecordButtonSwift";
 			sourceTree = "<group>";
 		};
-		72081A742E215FD9C1EE9AD6D0D096F3 /* Products */ = {
+		5F512F3818BC7C1C92CEC0867B3AE3BF /* PRTween */ = {
 			isa = PBXGroup;
 			children = (
-				EAF201D49A65DB6E92B28B77ED27F4DD /* Pods_Voices_IOS.framework */,
+				4F8576752876507029D56AFE43BA7317 /* PRTween.h */,
+				8C1723ED0D5C35A71369F2AD21088869 /* PRTween.m */,
+				2695D0F4EEC4C7D2272B3C1EB6F17172 /* PRTweenTimingFunctions.h */,
+				71BC19640DB57D9706122B9C21F78968 /* PRTweenTimingFunctions.m */,
+				E5B781D870442FC4C39C0D02557D3DEB /* Support Files */,
 			);
-			name = Products;
+			name = PRTween;
+			path = PRTween;
 			sourceTree = "<group>";
 		};
-		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+		8F3C2082CB36063A8C4565A4D6AB4F65 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+				7577DDC422D0D9697235F99C0CB9295A /* PRTween.framework */,
+				AE304C1E0AA97F27EA87D472F297D61B /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9C2848FA4BA23C87282869FC704A32EF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				580E44AFAAF3918C105EAFEEBD32FA99 /* RecordButtonKit.pcvd */,
+				3021874BAEC19081CDC50F87F48F2B5F /* StartRecording.aiff */,
+				A6D69F09B5C38721E411854D72BD5691 /* StopRecording.aiff */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		A0041EE078F2CB9910103CAA7677EA2F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5F512F3818BC7C1C92CEC0867B3AE3BF /* PRTween */,
+				2A6E9AB1E80151413BC1DDA06237BD0E /* RecordButtonSwift */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AE304C1E0AA97F27EA87D472F297D61B /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				499296F45CC9366A36A34450CCC42962 /* Foundation.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -82,46 +227,121 @@
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				72081A742E215FD9C1EE9AD6D0D096F3 /* Products */,
-				6433F35E264C19F52A27EAE80FD76069 /* Targets Support Files */,
+				8F3C2082CB36063A8C4565A4D6AB4F65 /* Frameworks */,
+				A0041EE078F2CB9910103CAA7677EA2F /* Pods */,
+				FB4B9AEF21DAFA963D452DBDCA6C041F /* Products */,
+				23CBB594E4D152BD6A925A5546DEDF96 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+		E5B781D870442FC4C39C0D02557D3DEB /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+				0D57FB32A500CE13F1A6DE361DCE426A /* PRTween.modulemap */,
+				E7B1B0F7418D38A9CA421EC6ACC13D16 /* PRTween-dummy.m */,
+				2B0F82C53C7C95488FFC00EA74D84150 /* PRTween-Info.plist */,
+				57276D845A67A5C5E5999BA3F8626387 /* PRTween-prefix.pch */,
+				F93E69A13F2DCFC46D022FBEDC9E95C6 /* PRTween-umbrella.h */,
+				D76172F816FE642E8B5768A029C6C676 /* PRTween.debug.xcconfig */,
+				A07BADD4DC22A147457C0EDF25678A82 /* PRTween.release.xcconfig */,
 			);
-			name = Frameworks;
+			name = "Support Files";
+			path = "../Target Support Files/PRTween";
+			sourceTree = "<group>";
+		};
+		FB4B9AEF21DAFA963D452DBDCA6C041F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EAF201D49A65DB6E92B28B77ED27F4DD /* Pods_Voices_IOS.framework */,
+				6E87F128D99E2CC3AFB7243CE45DE0C4 /* PRTween.framework */,
+				6D575B2E9E3C96BC3726F23A3746AD0A /* RecordButtonSwift.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		385670E07297EEC6701594417565B60E /* Headers */ = {
+		6DB9BF66D0EEE8E22193324AFEFEC501 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCF0DEFF2B63C5235D3A2159AE9EB217 /* Pods-Voices IOS-umbrella.h in Headers */,
+				DE50BA2F5CD2165217AE5855581E41FB /* Pods-Voices IOS-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C35EE2DD8FAE003F044757A13F2D423E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0BE0266010D9E134B8421D8EB1F340A /* RecordButtonSwift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAA3091884A6920181E9111C6F5F684C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7395D387552A1E7B1B47A9B438671501 /* PRTween-umbrella.h in Headers */,
+				6B6B1B4E386A64E82BC010FC92769F2F /* PRTween.h in Headers */,
+				515DCC24D134C2B5A930F78B7901AB31 /* PRTweenTimingFunctions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		AB70C37780F26EB4360066EFA73AC68B /* Pods-Voices IOS */ = {
+		4035FA6DDA37AC0E44212DF227951EE7 /* RecordButtonSwift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 39D8F1BB612F30F28BF65F131524DD83 /* Build configuration list for PBXNativeTarget "Pods-Voices IOS" */;
+			buildConfigurationList = 7E491BA0C824E4D6DC9DA4C762AF8437 /* Build configuration list for PBXNativeTarget "RecordButtonSwift" */;
 			buildPhases = (
-				385670E07297EEC6701594417565B60E /* Headers */,
-				F4A3D1F0CB334CBDB4E69D6A95F68828 /* Sources */,
-				F676B5AA5E9E73EE7E38601D0FFC81C7 /* Frameworks */,
-				57DCBDC0A4951CA81349FECAB735FA2A /* Resources */,
+				C35EE2DD8FAE003F044757A13F2D423E /* Headers */,
+				26A153A3A74015582D4D8C7E2821077E /* Sources */,
+				C3E27630D0EDF449F22F7AF9501A0521 /* Frameworks */,
+				AE7E60F9BD341D01D15E8370A15D5123 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5096536D415AC6A74498149E01D3DC1E /* PBXTargetDependency */,
+			);
+			name = RecordButtonSwift;
+			productName = RecordButtonSwift;
+			productReference = 6D575B2E9E3C96BC3726F23A3746AD0A /* RecordButtonSwift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		75CA230D0637BEBCCBE6371A0E6B5B6B /* PRTween */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE272D65874023847775F4CAC1AA2021 /* Build configuration list for PBXNativeTarget "PRTween" */;
+			buildPhases = (
+				FAA3091884A6920181E9111C6F5F684C /* Headers */,
+				FC91B5353510196ADDFDD1386921094D /* Sources */,
+				0581660BDC06175CB1254C62323D6C13 /* Frameworks */,
+				638F74D9CD34F8AC1AE956DF606EE4E3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PRTween;
+			productName = PRTween;
+			productReference = 6E87F128D99E2CC3AFB7243CE45DE0C4 /* PRTween.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		AB70C37780F26EB4360066EFA73AC68B /* Pods-Voices IOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C385FA273A5E7F729E11EB7AED06B77 /* Build configuration list for PBXNativeTarget "Pods-Voices IOS" */;
+			buildPhases = (
+				6DB9BF66D0EEE8E22193324AFEFEC501 /* Headers */,
+				19B5E037B35586EA76640059C4B7C348 /* Sources */,
+				D416FCCD8627F0D38939F4FC904D1342 /* Frameworks */,
+				AFE83393C16489CB47469B92AA3E036D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3DF19A14BA04A2BB7A2D5E76C5A31304 /* PBXTargetDependency */,
+				D49B46D5AA17DD080175F94C992120E3 /* PBXTargetDependency */,
 			);
 			name = "Pods-Voices IOS";
 			productName = "Pods-Voices IOS";
@@ -146,17 +366,36 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 72081A742E215FD9C1EE9AD6D0D096F3 /* Products */;
+			productRefGroup = FB4B9AEF21DAFA963D452DBDCA6C041F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				AB70C37780F26EB4360066EFA73AC68B /* Pods-Voices IOS */,
+				75CA230D0637BEBCCBE6371A0E6B5B6B /* PRTween */,
+				4035FA6DDA37AC0E44212DF227951EE7 /* RecordButtonSwift */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		57DCBDC0A4951CA81349FECAB735FA2A /* Resources */ = {
+		638F74D9CD34F8AC1AE956DF606EE4E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE7E60F9BD341D01D15E8370A15D5123 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A744D1823F87142A0DDCB328766F93CC /* RecordButtonKit.pcvd in Resources */,
+				FFAD70C37E1105B1C6333360EC62C33D /* StartRecording.aiff in Resources */,
+				D303E6DBEFF268AC0238180E30A2ADDB /* StopRecording.aiff in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFE83393C16489CB47469B92AA3E036D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -166,15 +405,56 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F4A3D1F0CB334CBDB4E69D6A95F68828 /* Sources */ = {
+		19B5E037B35586EA76640059C4B7C348 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B667200A42E482FF0C51D9F77C82BAF /* Pods-Voices IOS-dummy.m in Sources */,
+				7EB274FA31AE4B1EDC9292F4594C5C5C /* Pods-Voices IOS-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26A153A3A74015582D4D8C7E2821077E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0D65032D0682D6FCE719303DC4F0F8E /* RecordButton.swift in Sources */,
+				0BFBE860A14C087585738A490F23EB8F /* RecordButtonKit.swift in Sources */,
+				C5240F930E69322812EBEEF43BD048EB /* RecordButtonSwift-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC91B5353510196ADDFDD1386921094D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F649E08CD3ABEF57DBDC9945C149526 /* PRTween-dummy.m in Sources */,
+				A5A7E0C70F5F30EABDC70751124989CB /* PRTween.m in Sources */,
+				1104FDD8A47DC37DC99E84605BD21A64 /* PRTweenTimingFunctions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3DF19A14BA04A2BB7A2D5E76C5A31304 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PRTween;
+			target = 75CA230D0637BEBCCBE6371A0E6B5B6B /* PRTween */;
+			targetProxy = 027E8DF6016B92AECBE465832591C1C5 /* PBXContainerItemProxy */;
+		};
+		5096536D415AC6A74498149E01D3DC1E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PRTween;
+			target = 75CA230D0637BEBCCBE6371A0E6B5B6B /* PRTween */;
+			targetProxy = 667066AE122FFC5142BA49F3CDA4C053 /* PBXContainerItemProxy */;
+		};
+		D49B46D5AA17DD080175F94C992120E3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RecordButtonSwift;
+			target = 4035FA6DDA37AC0E44212DF227951EE7 /* RecordButtonSwift */;
+			targetProxy = 1FF2DDC0D9C6A237AA0097A63358EFFE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		13967C5C8F4B10B3EE4D6C208A0A7BEB /* Debug */ = {
@@ -241,9 +521,9 @@
 			};
 			name = Debug;
 		};
-		6D0B6F05310E379F9245F7CA12B4BA71 /* Release */ = {
+		1F19F9C4890DFC57BD714C0D95F0FAF0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E05A941C48DA93810D2852B417E71BE0 /* Pods-Voices IOS.release.xcconfig */;
+			baseConfigurationReference = 9DFD42D5C0A0AD7B93D8204070ADB00B /* Pods-Voices IOS.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -273,6 +553,77 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		32A84C6CA7F32A60A03D76442CFF2016 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E68F29E4C7E2528956EB1623D52C1E47 /* RecordButtonSwift.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RecordButtonSwift/RecordButtonSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RecordButtonSwift/RecordButtonSwift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/RecordButtonSwift/RecordButtonSwift.modulemap";
+				PRODUCT_MODULE_NAME = RecordButtonSwift;
+				PRODUCT_NAME = RecordButtonSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		410D49BD36E83A4C711479F6AC38DED9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A07BADD4DC22A147457C0EDF25678A82 /* PRTween.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PRTween/PRTween-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PRTween/PRTween-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/PRTween/PRTween.modulemap";
+				PRODUCT_MODULE_NAME = PRTween;
+				PRODUCT_NAME = PRTween;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -340,9 +691,80 @@
 			};
 			name = Release;
 		};
-		ECFC9A055B9D7834AC49D2D9C50DBA69 /* Debug */ = {
+		99C6C87D47673966EEA82F82DD764EDA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C8A821B4FE4838909501693A855DF41D /* Pods-Voices IOS.debug.xcconfig */;
+			baseConfigurationReference = D76172F816FE642E8B5768A029C6C676 /* PRTween.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PRTween/PRTween-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PRTween/PRTween-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/PRTween/PRTween.modulemap";
+				PRODUCT_MODULE_NAME = PRTween;
+				PRODUCT_NAME = PRTween;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F70325B4587A0A3F1BCB9A6D6F4020E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0454892560C24500050A1B2144DB897C /* RecordButtonSwift.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RecordButtonSwift/RecordButtonSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RecordButtonSwift/RecordButtonSwift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/RecordButtonSwift/RecordButtonSwift.modulemap";
+				PRODUCT_MODULE_NAME = RecordButtonSwift;
+				PRODUCT_NAME = RecordButtonSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FA4FCDE6C6444CDA1B77063F7F0BC80F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4FA39B3B287E0FDB3DB1D660FC5CFAAF /* Pods-Voices IOS.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -381,11 +803,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		39D8F1BB612F30F28BF65F131524DD83 /* Build configuration list for PBXNativeTarget "Pods-Voices IOS" */ = {
+		0C385FA273A5E7F729E11EB7AED06B77 /* Build configuration list for PBXNativeTarget "Pods-Voices IOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				ECFC9A055B9D7834AC49D2D9C50DBA69 /* Debug */,
-				6D0B6F05310E379F9245F7CA12B4BA71 /* Release */,
+				FA4FCDE6C6444CDA1B77063F7F0BC80F /* Debug */,
+				1F19F9C4890DFC57BD714C0D95F0FAF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -395,6 +817,24 @@
 			buildConfigurations = (
 				13967C5C8F4B10B3EE4D6C208A0A7BEB /* Debug */,
 				871B6E28ABA34DAE69824AB9D22D3B7D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E491BA0C824E4D6DC9DA4C762AF8437 /* Build configuration list for PBXNativeTarget "RecordButtonSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32A84C6CA7F32A60A03D76442CFF2016 /* Debug */,
+				F70325B4587A0A3F1BCB9A6D6F4020E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE272D65874023847775F4CAC1AA2021 /* Build configuration list for PBXNativeTarget "PRTween" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99C6C87D47673966EEA82F82DD764EDA /* Debug */,
+				410D49BD36E83A4C711479F6AC38DED9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

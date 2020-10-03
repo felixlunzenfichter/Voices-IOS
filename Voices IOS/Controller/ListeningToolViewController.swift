@@ -39,7 +39,7 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate {
         
         UIsetup()
         
-        transcribe(url: voiceURL as URL.ReferenceType)
+    
     }
     
     fileprivate func setUpAudioSession() {
@@ -81,6 +81,7 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate {
     fileprivate func initTimeInfo() {
         timeInfo.text = "0/\(duration)"
     }
+
 }
 
 // MARK:- Actions.
@@ -106,6 +107,14 @@ extension ListeningToolViewController {
         persistentContainer.deleteVoice(voice: voice)
         navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func transcribeButtonPushed(_ sender: Any) {
+        
+        transcribe(url: voiceURL as URL.ReferenceType)
+        
+    }
+    
+    
     
 }
 
@@ -155,6 +164,9 @@ extension ListeningToolViewController : SFSpeechRecognizerDelegate {
        
         if !myRecognizer.isAvailable {
             // The recognizer is not available right now
+            let alert = UIAlertController(title: "Error", message: "Speech to text sevice not available.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
             return
         }
         

@@ -1,3 +1,20 @@
-PODFILE CHECKSUM: 2de2f7a4237ef2cc209246cf698f6529c28bbc90
+PODS:
+  - PRTween (0.0.1)
+  - RecordButtonSwift (0.0.4):
+    - PRTween (~> 0.0.1)
+
+DEPENDENCIES:
+  - RecordButtonSwift
+
+SPEC REPOS:
+  trunk:
+    - PRTween
+    - RecordButtonSwift
+
+SPEC CHECKSUMS:
+  PRTween: b5f4a594f65f4198eb68e2ef3cf72f3390f037b8
+  RecordButtonSwift: 8a8bd6f30e1b61054eb7626b659470b21341ff16
+
+PODFILE CHECKSUM: 22e818ba03b2d77af86eccfbf398d7bedc531752
 
 COCOAPODS: 1.9.1

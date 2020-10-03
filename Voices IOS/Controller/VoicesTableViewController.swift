@@ -14,7 +14,6 @@ class VoicesTableViewController: UITableViewController {
     
     // MARK: - Properties
     var voices: [Voice]!
-    var chosenVoice : Voice?
 
     private lazy var persistentContainer: PersistentContainer = {
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
@@ -51,10 +50,9 @@ class VoicesTableViewController: UITableViewController {
 extension VoicesTableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        chosenVoice = voices[indexPath.row]
         
         if let ListeningView = storyboard?.instantiateViewController(identifier: "PlayWindow") as? ListeningToolViewController {
-            ListeningView.voice = chosenVoice
+            ListeningView.voice = voices[indexPath.row]
             navigationController?.pushViewController(ListeningView, animated: true)
         }
     }
@@ -96,6 +94,7 @@ extension VoicesTableViewController {
     
     fileprivate func initializeVoiceCell(_ cell: VoiceTableViewCell, _ indexPath: IndexPath) {
         cell.title.text = voices[indexPath.row].title
+        
     }
 }
 

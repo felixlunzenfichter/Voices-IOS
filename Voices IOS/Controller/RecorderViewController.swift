@@ -8,13 +8,43 @@
 
 import UIKit
 import AVFoundation
+import RecordButtonSwift
 
 class RecorderViewController: UIViewController, AVAudioRecorderDelegate {
     
     var audioSession: AVAudioSession = AVAudioSession.sharedInstance()
     var audioRecorder: AVAudioRecorder?
     let persistentContainer = (UIApplication.shared.delegate as! AppDelegate).persistentContainer
-    var audioFileName: String?
+    var voiceFileName: String?
+    
+
+    @IBOutlet var recordButton: RecordButton!
+
+
+    var progressTimer : Timer!
+    var progress : CGFloat! = 0
+    
+    func record() {
+        self.progressTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: Selector(("updateProgress")), userInfo: nil, repeats: true)
+    }
+    
+    func updateProgress() {
+        
+        let maxDuration = CGFloat(5) // max duration of the recordButton
+        
+        progress = progress + (CGFloat(0.05) / maxDuration)
+        recordButton.setProgress(progress)
+        
+        if progress >= 1 {
+            progressTimer.invalidate()
+        }
+        
+    }
+    
+    func stop() {
+        self.progressTimer.invalidate()
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,15 +66,15 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate {
 
 // MARK:- IBActions
 extension RecorderViewController {
-    @IBAction func pressedRecordButton(_ sender: Any) {
-        audioFileName = "\(getCurrentTimeStamp()).m4a"
-        let audioFilePath = getVoiceURL(audioFileName: audioFileName!)
+    fileprivate func startRecording() {
+        voiceFileName = "\(getCurrentTimeStamp()).m4a"
+        let audioFilePath = getVoiceURL(audioFileName: voiceFileName!)
         
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
             AVSampleRateKey: 12000,
             AVNumberOfChannelsKey: 1,
-            AVEncoderAudioQualityKey: AVAudioQuality.medium.rawValue
+            AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
         ]
         
         do {
@@ -56,12 +86,22 @@ extension RecorderViewController {
             // not jud
         }
         
-        persistentContainer.saveVoice(voiceName: audioFileName!)
+        persistentContainer.saveVoice(voiceName: voiceFileName!)
     }
     
-    @IBAction func StopRecordingButtonPressed(_ sender: Any) {
+    fileprivate func stopRecording() {
         audioRecorder?.stop()
+        audioRecorder = nil
     }
+    
+    @IBAction func recordButtonPressed(_ sender: Any) {
+        if audioRecorder == nil {
+            startRecording()
+        } else {
+            stopRecording()
+        }
+    }
+
 }
 
 // MARK:- Helper functions.
@@ -69,11 +109,11 @@ extension RecorderViewController {
     func getDocumentsDirectory() -> URL {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
     }
-    
+
     func getVoiceURL(audioFileName: String) -> URL {
         getDocumentsDirectory().appendingPathComponent("\(audioFileName)")
     }
-        
+
     func getCurrentTimeStamp() -> String {
         let date = Date()
         let df = DateFormatter()
