@@ -3,13 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		7340F6C9251E451C006ABA84 /* VoiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734687D025163A4800A9B6A7 /* VoiceTableViewCell.swift */; };
 		734687D32516433500A9B6A7 /* VoicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734687D22516433500A9B6A7 /* VoicesTableViewController.swift */; };
 		734687D72517B79200A9B6A7 /* ListeningToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734687D62517B79200A9B6A7 /* ListeningToolViewController.swift */; };
+		7373A1C0252B602400312B1C /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7373A1BF252B602400312B1C /* ShareViewController.swift */; };
+		7373A1C3252B602400312B1C /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7373A1C1252B602400312B1C /* MainInterface.storyboard */; };
+		7373A1C7252B602400312B1C /* importVocieExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7373A1BD252B602400312B1C /* importVocieExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7373A1D0252B603800312B1C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 737610132524A8DE0005C741 /* Model.xcdatamodeld */; };
 		7374CBA52521F6D3008FC2F5 /* RecorderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7374CBA42521F6D3008FC2F5 /* RecorderViewController.swift */; };
 		737610152524A8DE0005C741 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 737610132524A8DE0005C741 /* Model.xcdatamodeld */; };
 		7376103D252528240005C741 /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7376103C252528240005C741 /* PersistentContainer.swift */; };
@@ -25,6 +29,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		7373A1C5252B602400312B1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73DCFD8E251126F0000AD100 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7373A1BC252B602400312B1C;
+			remoteInfo = importVocieExtension;
+		};
 		73761065252797080005C741 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 73DCFD8E251126F0000AD100 /* Project object */;
@@ -41,11 +52,31 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		7373A1C8252B602400312B1C /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				7373A1C7252B602400312B1C /* importVocieExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		6745F1876018729803A35D81 /* Pods-Voices IOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voices IOS.release.xcconfig"; path = "Target Support Files/Pods-Voices IOS/Pods-Voices IOS.release.xcconfig"; sourceTree = "<group>"; };
 		734687D025163A4800A9B6A7 /* VoiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceTableViewCell.swift; sourceTree = "<group>"; };
 		734687D22516433500A9B6A7 /* VoicesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicesTableViewController.swift; sourceTree = "<group>"; };
 		734687D62517B79200A9B6A7 /* ListeningToolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeningToolViewController.swift; sourceTree = "<group>"; };
+		7373A1BD252B602400312B1C /* importVocieExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = importVocieExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		7373A1BF252B602400312B1C /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		7373A1C2252B602400312B1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		7373A1C4252B602400312B1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7373A1D5252B6AF900312B1C /* Voices IOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Voices IOS.entitlements"; sourceTree = "<group>"; };
+		7373A1DA252B6B0F00312B1C /* importVocieExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = importVocieExtension.entitlements; sourceTree = "<group>"; };
 		7374CBA42521F6D3008FC2F5 /* RecorderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderViewController.swift; sourceTree = "<group>"; };
 		737610142524A8DE0005C741 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		7376103C252528240005C741 /* PersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentContainer.swift; sourceTree = "<group>"; };
@@ -68,6 +99,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7373A1BA252B602400312B1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7376105D252797080005C741 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -93,6 +131,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7373A1BE252B602400312B1C /* importVocieExtension */ = {
+			isa = PBXGroup;
+			children = (
+				7373A1DA252B6B0F00312B1C /* importVocieExtension.entitlements */,
+				7373A1BF252B602400312B1C /* ShareViewController.swift */,
+				7373A1C1252B602400312B1C /* MainInterface.storyboard */,
+				7373A1C4252B602400312B1C /* Info.plist */,
+			);
+			path = importVocieExtension;
+			sourceTree = "<group>";
+		};
 		7376101E2524EDA60005C741 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +199,7 @@
 				73DCFD98251126F0000AD100 /* Voices IOS */,
 				73761061252797080005C741 /* Voices IOSTests */,
 				7376107125279C090005C741 /* Voices IOSUITests */,
+				7373A1BE252B602400312B1C /* importVocieExtension */,
 				73DCFD97251126F0000AD100 /* Products */,
 				DDB87475651B0AF09B76C6ED /* Pods */,
 				E538DE19B256468050F899CA /* Frameworks */,
@@ -162,6 +212,7 @@
 				73DCFD96251126F0000AD100 /* Voices IOS.app */,
 				73761060252797080005C741 /* Voices IOSTests.xctest */,
 				7376107025279C090005C741 /* Voices IOSUITests.xctest */,
+				7373A1BD252B602400312B1C /* importVocieExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -169,6 +220,7 @@
 		73DCFD98251126F0000AD100 /* Voices IOS */ = {
 			isa = PBXGroup;
 			children = (
+				7373A1D5252B6AF900312B1C /* Voices IOS.entitlements */,
 				737610212524EE0A0005C741 /* Model */,
 				7376101F2524EDC40005C741 /* View */,
 				7376101E2524EDA60005C741 /* Controller */,
@@ -198,6 +250,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7373A1BC252B602400312B1C /* importVocieExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7373A1CB252B602400312B1C /* Build configuration list for PBXNativeTarget "importVocieExtension" */;
+			buildPhases = (
+				7373A1B9252B602400312B1C /* Sources */,
+				7373A1BA252B602400312B1C /* Frameworks */,
+				7373A1BB252B602400312B1C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = importVocieExtension;
+			productName = importVocieExtension;
+			productReference = 7373A1BD252B602400312B1C /* importVocieExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		7376105F252797080005C741 /* Voices IOSTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 73761069252797080005C741 /* Build configuration list for PBXNativeTarget "Voices IOSTests" */;
@@ -243,10 +312,12 @@
 				73DCFD93251126F0000AD100 /* Frameworks */,
 				73DCFD94251126F0000AD100 /* Resources */,
 				B1B8C43E83D2A8E23F50C443 /* [CP] Embed Pods Frameworks */,
+				7373A1C8252B602400312B1C /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				7373A1C6252B602400312B1C /* PBXTargetDependency */,
 			);
 			name = "Voices IOS";
 			productName = "Voices IOS";
@@ -266,6 +337,9 @@
 				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Felix Lunzenfichter";
 				TargetAttributes = {
+					7373A1BC252B602400312B1C = {
+						CreatedOnToolsVersion = 12.0.1;
+					};
 					7376105F252797080005C741 = {
 						CreatedOnToolsVersion = 12.0.1;
 						TestTargetID = 73DCFD95251126F0000AD100;
@@ -295,11 +369,20 @@
 				73DCFD95251126F0000AD100 /* Voices IOS */,
 				7376105F252797080005C741 /* Voices IOSTests */,
 				7376106F25279C090005C741 /* Voices IOSUITests */,
+				7373A1BC252B602400312B1C /* importVocieExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7373A1BB252B602400312B1C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7373A1C3252B602400312B1C /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7376105E252797080005C741 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -369,6 +452,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7373A1B9252B602400312B1C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7373A1C0252B602400312B1C /* ShareViewController.swift in Sources */,
+				7373A1D0252B603800312B1C /* Model.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7376105C252797080005C741 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -404,6 +496,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		7373A1C6252B602400312B1C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7373A1BC252B602400312B1C /* importVocieExtension */;
+			targetProxy = 7373A1C5252B602400312B1C /* PBXContainerItemProxy */;
+		};
 		73761066252797080005C741 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 73DCFD95251126F0000AD100 /* Voices IOS */;
@@ -417,6 +514,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		7373A1C1252B602400312B1C /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7373A1C2252B602400312B1C /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		73DCFD9F251126F0000AD100 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -436,6 +541,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		7373A1C9252B602400312B1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = importVocieExtension/importVocieExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W26GVS4M5S;
+				INFOPLIST_FILE = importVocieExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.connect.Voices-IOS.importVocieExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7373A1CA252B602400312B1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = importVocieExtension/importVocieExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W26GVS4M5S;
+				INFOPLIST_FILE = importVocieExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.connect.Voices-IOS.importVocieExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		73761067252797080005C741 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -642,7 +789,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 90DC960830B972EB25DB67E3 /* Pods-Voices IOS.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Voices IOS/Voices IOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W26GVS4M5S;
 				INFOPLIST_FILE = "Voices IOS/Info.plist";
@@ -661,7 +810,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6745F1876018729803A35D81 /* Pods-Voices IOS.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Voices IOS/Voices IOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W26GVS4M5S;
 				INFOPLIST_FILE = "Voices IOS/Info.plist";
@@ -679,6 +830,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7373A1CB252B602400312B1C /* Build configuration list for PBXNativeTarget "importVocieExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7373A1C9252B602400312B1C /* Debug */,
+				7373A1CA252B602400312B1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		73761069252797080005C741 /* Build configuration list for PBXNativeTarget "Voices IOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

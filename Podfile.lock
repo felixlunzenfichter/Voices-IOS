@@ -1,20 +1,24 @@
 PODS:
+  - FlagKit (2.2)
   - PRTween (0.0.1)
   - RecordButtonSwift (0.0.4):
     - PRTween (~> 0.0.1)
 
 DEPENDENCIES:
+  - FlagKit
   - RecordButtonSwift
 
 SPEC REPOS:
   trunk:
+    - FlagKit
     - PRTween
     - RecordButtonSwift
 
 SPEC CHECKSUMS:
+  FlagKit: eca7dc89064b0c986302ba9acefad1bf80a435b1
   PRTween: b5f4a594f65f4198eb68e2ef3cf72f3390f037b8
   RecordButtonSwift: 8a8bd6f30e1b61054eb7626b659470b21341ff16
 
-PODFILE CHECKSUM: 22e818ba03b2d77af86eccfbf398d7bedc531752
+PODFILE CHECKSUM: db909c742a9ad54e836dd70fe575a15aa0f7534d
 
 COCOAPODS: 1.9.1

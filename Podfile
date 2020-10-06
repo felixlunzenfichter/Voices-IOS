@@ -9,5 +9,6 @@ target 'Voices IOS' do
 
   # Pods for Voices IOS
   pod "RecordButtonSwift"
+  pod "FlagKit"
 
 end

@@ -355,12 +355,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transcription:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C78-DK-1uR">
-                                <rect key="frame" x="20" y="492" width="105" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a language and hit the transcribe button." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZf-fg-EdP">
                                 <rect key="frame" x="20" y="523" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -379,30 +373,50 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6p-Ct-uaH">
-                                <rect key="frame" x="20" y="454" width="70" height="30"/>
+                                <rect key="frame" x="20" y="485" width="70" height="30"/>
                                 <state key="normal" title="transcribe"/>
                                 <connections>
                                     <action selector="transcribeButtonPushed:" destination="1N9-po-06I" eventType="touchUpInside" id="WJh-iC-HZ6"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Dyp-j1-bG9">
+                                <rect key="frame" x="45" y="490" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OxC-Im-xAe">
+                                <rect key="frame" x="344" y="365" width="50" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="iBY-PN-6f8"/>
+                                    <constraint firstAttribute="height" constant="150" id="kJK-vH-cOX"/>
+                                </constraints>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="language:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kns-c0-C2L">
+                                <rect key="frame" x="261" y="438" width="75" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ucT-Sb-xnE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="kZf-fg-EdP" firstAttribute="top" secondItem="Dyp-j1-bG9" secondAttribute="bottom" constant="13" id="4ZP-CO-8Lf"/>
+                            <constraint firstItem="Dyp-j1-bG9" firstAttribute="leading" secondItem="ucT-Sb-xnE" secondAttribute="leading" constant="45" id="51v-PQ-Wok"/>
                             <constraint firstItem="ucT-Sb-xnE" firstAttribute="bottom" secondItem="lm2-ck-Rwc" secondAttribute="bottom" constant="25" id="7xz-p2-z7p"/>
                             <constraint firstItem="FaP-GC-HuJ" firstAttribute="leading" secondItem="ucT-Sb-xnE" secondAttribute="leading" constant="20" id="9bL-ip-b0l"/>
-                            <constraint firstItem="t6p-Ct-uaH" firstAttribute="leading" secondItem="ucT-Sb-xnE" secondAttribute="leading" constant="20" id="9fS-fl-496"/>
+                            <constraint firstItem="kZf-fg-EdP" firstAttribute="top" secondItem="kns-c0-C2L" secondAttribute="bottom" constant="64" id="BPF-OR-d0M"/>
                             <constraint firstItem="ucT-Sb-xnE" firstAttribute="bottom" secondItem="THN-aY-Mxc" secondAttribute="bottom" constant="25" id="EKf-I8-ggy"/>
+                            <constraint firstItem="t6p-Ct-uaH" firstAttribute="leading" secondItem="ucT-Sb-xnE" secondAttribute="leading" constant="20" id="IwV-pb-OfC"/>
                             <constraint firstItem="FaP-GC-HuJ" firstAttribute="top" secondItem="kZf-fg-EdP" secondAttribute="bottom" constant="20" id="J1E-yF-FQq"/>
                             <constraint firstItem="ucT-Sb-xnE" firstAttribute="trailing" secondItem="kZf-fg-EdP" secondAttribute="trailing" constant="20" id="LCy-bZ-eUB"/>
+                            <constraint firstItem="ucT-Sb-xnE" firstAttribute="trailing" secondItem="OxC-Im-xAe" secondAttribute="trailing" constant="20" id="ObH-h7-Shi"/>
                             <constraint firstItem="ucT-Sb-xnE" firstAttribute="trailing" secondItem="FaP-GC-HuJ" secondAttribute="trailing" constant="20" id="Oe7-cu-ZT7"/>
                             <constraint firstItem="kZf-fg-EdP" firstAttribute="leading" secondItem="ucT-Sb-xnE" secondAttribute="leading" constant="20" id="QSW-bO-L2T"/>
                             <constraint firstItem="cyd-ti-orb" firstAttribute="top" secondItem="FaP-GC-HuJ" secondAttribute="bottom" constant="5" id="Ti2-Fk-9v7"/>
-                            <constraint firstItem="kZf-fg-EdP" firstAttribute="top" secondItem="C78-DK-1uR" secondAttribute="bottom" constant="10" id="UFi-Xa-bwB"/>
+                            <constraint firstItem="kZf-fg-EdP" firstAttribute="top" secondItem="OxC-Im-xAe" secondAttribute="bottom" constant="8" symbolic="YES" id="Z9J-Cm-rru"/>
+                            <constraint firstItem="OxC-Im-xAe" firstAttribute="leading" secondItem="kns-c0-C2L" secondAttribute="trailing" constant="8" symbolic="YES" id="e2N-5R-OhH"/>
                             <constraint firstItem="ucT-Sb-xnE" firstAttribute="trailing" secondItem="THN-aY-Mxc" secondAttribute="trailing" constant="20" id="e2W-wW-hxX"/>
-                            <constraint firstItem="C78-DK-1uR" firstAttribute="top" secondItem="t6p-Ct-uaH" secondAttribute="bottom" constant="8" symbolic="YES" id="jig-Eh-hfV"/>
                             <constraint firstItem="lm2-ck-Rwc" firstAttribute="top" secondItem="FaP-GC-HuJ" secondAttribute="bottom" constant="20" id="mlJ-k2-Ue9"/>
-                            <constraint firstItem="C78-DK-1uR" firstAttribute="leading" secondItem="ucT-Sb-xnE" secondAttribute="leading" constant="20" id="pIp-o0-Hb1"/>
+                            <constraint firstItem="kZf-fg-EdP" firstAttribute="top" secondItem="t6p-Ct-uaH" secondAttribute="bottom" constant="8" symbolic="YES" id="qU4-I5-kfw"/>
                             <constraint firstItem="lm2-ck-Rwc" firstAttribute="leading" secondItem="ucT-Sb-xnE" secondAttribute="leading" constant="25" id="t8N-eW-GJM"/>
                             <constraint firstItem="ucT-Sb-xnE" firstAttribute="trailing" secondItem="cyd-ti-orb" secondAttribute="trailing" constant="20" id="ush-ly-Pfe"/>
                         </constraints>
@@ -411,9 +425,12 @@
                     <navigationItem key="navigationItem" title="Listening" id="HHP-fd-hTe"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="Dyp-j1-bG9" id="fja-mQ-74M"/>
                         <outlet property="listeningProgressBar" destination="FaP-GC-HuJ" id="wsM-lU-U2T"/>
+                        <outlet property="pickerView" destination="OxC-Im-xAe" id="Wp8-gO-mhA"/>
                         <outlet property="playPauseButton" destination="lm2-ck-Rwc" id="fPk-OR-xpZ"/>
                         <outlet property="timeInfo" destination="cyd-ti-orb" id="jfb-Cw-ywD"/>
+                        <outlet property="transcribeButton" destination="t6p-Ct-uaH" id="KsS-WH-5ba"/>
                         <outlet property="transcription" destination="kZf-fg-EdP" id="sei-Wd-6hr"/>
                     </connections>
                 </viewController>
@@ -495,20 +512,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SWY-vv-Emi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="300" y="1357"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="rfP-v7-ehz">
-            <objects>
-                <viewController id="zEq-4a-uBG" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="oKs-FY-3Yg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2Su-ND-Fdd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-648" y="2839"/>
         </scene>
     </scenes>
     <designables>
