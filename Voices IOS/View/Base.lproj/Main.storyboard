@@ -425,13 +425,13 @@
                     <navigationItem key="navigationItem" title="Listening" id="HHP-fd-hTe"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="activityIndicator" destination="Dyp-j1-bG9" id="fja-mQ-74M"/>
+                        <outlet property="languagePickerView" destination="OxC-Im-xAe" id="Wp8-gO-mhA"/>
                         <outlet property="listeningProgressBar" destination="FaP-GC-HuJ" id="wsM-lU-U2T"/>
-                        <outlet property="pickerView" destination="OxC-Im-xAe" id="Wp8-gO-mhA"/>
                         <outlet property="playPauseButton" destination="lm2-ck-Rwc" id="fPk-OR-xpZ"/>
-                        <outlet property="timeInfo" destination="cyd-ti-orb" id="jfb-Cw-ywD"/>
+                        <outlet property="timeInfoLabel" destination="cyd-ti-orb" id="jfb-Cw-ywD"/>
                         <outlet property="transcribeButton" destination="t6p-Ct-uaH" id="KsS-WH-5ba"/>
-                        <outlet property="transcription" destination="kZf-fg-EdP" id="sei-Wd-6hr"/>
+                        <outlet property="transcriptionActivityIndicator" destination="Dyp-j1-bG9" id="fja-mQ-74M"/>
+                        <outlet property="transcriptionLabel" destination="kZf-fg-EdP" id="sei-Wd-6hr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tSM-xb-zjK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

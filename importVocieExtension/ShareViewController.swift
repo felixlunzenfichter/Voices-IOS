@@ -44,6 +44,7 @@ class ShareViewController: SLComposeServiceViewController {
                     let url = maybeURL as! URL
                     print("url: \(url)")
                     let audioData: Data
+                    print(self.getDocumentsDirectory())
                     do {
                         audioData = try Data(contentsOf: url)
                     } catch {

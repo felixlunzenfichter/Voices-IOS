@@ -10,38 +10,24 @@ import UIKit
 import AVFoundation
 import Speech
 
-class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate {
     
     // MARK:- Properties
     @IBOutlet var playPauseButton: UIButton!
-    @IBOutlet var transcription: UILabel!
+    @IBOutlet var transcriptionLabel: UILabel!
     @IBOutlet var listeningProgressBar: UIProgressView!
-    @IBOutlet var timeInfo: UILabel!
-    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet var timeInfoLabel: UILabel!
+    @IBOutlet var transcriptionActivityIndicator: UIActivityIndicatorView!
     @IBOutlet var transcribeButton: UIButton!
-    @IBOutlet var pickerView: UIPickerView!
+    @IBOutlet var languagePickerView: UIPickerView!
+                                
+    let languages : [String] = ["en", "de", "fr", "es"]
     
-//    enum Languages {
-//        case English
-//        case German
-//        case French
-//        case Spanish
-//    }
-//
-////    var languages : [Languages : String] = [Languages.English : "en",
-////                                            Languages.German : "de",
-////                                            Languages.French : "fr",
-////                                            Languages.Spanish : "es"
-////                                            ]
     
-    let languages : [String] = ["en", "de", "fr"]
-    var language : String = "en"
     
     let persistentContainer = (UIApplication.shared.delegate as! AppDelegate).persistentContainer
     var voice: Voice!
     var voiceURL : URL!
-    var currentlyTranscribing : Bool = false
-    
     var duration: Double = 0.0
     
     var audioPlayer: AVAudioPlayer?
@@ -60,12 +46,6 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate, UIPi
         UIsetup()
     
         setUpLanguagePicker()
-        
-    }
-    
-    fileprivate func setUpLanguagePicker() {
-        pickerView.delegate = self
-        pickerView.dataSource = self
     }
     
     fileprivate func setUpAudioSession() {
@@ -91,36 +71,42 @@ class ListeningToolViewController: UIViewController, AVAudioPlayerDelegate, UIPi
             self.present(alert, animated: true)
         }
     }
+    
+    fileprivate func setUpLanguagePicker() {
+        languagePickerView.delegate = self
+        languagePickerView.dataSource = self
+        languagePickerView.selectRow(languages.firstIndex(of: voice.language ?? "en")!, inComponent: 0, animated: true)
+    }
+    
 
     fileprivate func UIsetup() {
         setDuration()
         initTimeInfo()
         listeningProgressBar.progress = 0.0
-        transcription.numberOfLines = 0
+        transcriptionLabel.numberOfLines = 0
         if voice.transcript != nil {
-            transcription.text = voice.transcript
+            transcriptionLabel.text = voice.transcript
         }
         setUIToCurrentlyNotTranscribing()
     }
     
     func setUIToCurrentlyNotTranscribing () {
         transcribeButton.isHidden = false
-        activityIndicator.isHidden = true
-        activityIndicator.startAnimating()
+        transcriptionActivityIndicator.isHidden = true
+        transcriptionActivityIndicator.startAnimating()
     }
     
     func setUIToCurrentlyTranscribing () {
         transcribeButton.isHidden = true
-        activityIndicator.isHidden = false
+        transcriptionActivityIndicator.isHidden = false
     }
     
     fileprivate func setDuration() {
         duration = ((audioPlayer?.duration ?? 0.0) * 10).rounded() / 10
     }
-
     
     fileprivate func initTimeInfo() {
-        timeInfo.text = "0/\(duration)"
+        timeInfoLabel.text = "0/\(duration)"
     }
 
 }
@@ -180,7 +166,7 @@ extension ListeningToolViewController {
     fileprivate func updateTimeInfo () {
         let time : Double = audioPlayer?.currentTime ?? -69.0
         let roundedTime = (time * 10).rounded() / 10
-        timeInfo.text = "\(roundedTime)/\(duration)"
+        timeInfoLabel.text = "\(roundedTime)/\(duration)"
     }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
@@ -201,7 +187,7 @@ extension ListeningToolViewController : SFSpeechRecognizerDelegate {
     
     func transcribe(url:NSURL) {
         
-        guard let myRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: language)) else {
+        guard let myRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: self.voice.language ?? "en")) else {
         // A recognizer is not supported for the current locale
             print("Could not create SFpeechRecognizer instance in function recognizeFile().")
             return
@@ -227,14 +213,14 @@ extension ListeningToolViewController : SFSpeechRecognizerDelegate {
             guard let result = result else {
                 // Recognition failed, so check error for details and handle it
                 print("fail")
-                self.transcription.text = "Apple failed to transcribe this voice."
+                self.transcriptionLabel.text = "Apple failed to transcribe this voice."
                 self.setUIToCurrentlyNotTranscribing()
                 return
             }
           // Print the speech that has been recognized so far
             if result.isFinal {
                 self.setUIToCurrentlyNotTranscribing()
-                self.transcription.text = result.bestTranscription.formattedString
+                self.transcriptionLabel.text = result.bestTranscription.formattedString
                 self.saveTranscriptionInDatabase(result)
             }
        }
@@ -254,7 +240,7 @@ extension ListeningToolViewController {
     }
 }
 
-extension ListeningToolViewController {
+extension ListeningToolViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -270,13 +256,20 @@ extension ListeningToolViewController {
         return languages.count
     }
     
-    // The data to return fopr the row and component (column) that's being passed in
+    // The data to return for the row and component (column) that's being passed in
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return languages[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        language = languages[row]
+        voice.language = languages[row]
+        
+        do{
+            try persistentContainer.viewContext.save()
+        } catch {
+            print("Error updating lanugage field of voice object in database in didSelectRow function of picker view in listening tool: \(error)")
+        }
+        
         // This method is triggered whenever the user makes a change to the picker selection.
         // The parameter named row and component represents what was selected.
     }
