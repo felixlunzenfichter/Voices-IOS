@@ -18,6 +18,7 @@ class PersistentContainer: NSPersistentContainer {
     var listViewDelegate : ContentUpdateDelegate!
     
     func saveContext(backgroundContext: NSManagedObjectContext? = nil) {
+        
         let context = backgroundContext ?? viewContext
         guard context.hasChanges else { return }
         do {
@@ -27,27 +28,39 @@ class PersistentContainer: NSPersistentContainer {
         }
     }
     
-    func saveVoice(voiceName: String) {
+    func saveVoice(voiceName: String, date: String) {
+        
+        defer {updateUI()}
+        
         let voice = Voice(context: self.viewContext)
-        voice.title = voiceName
+        voice.title = date
         voice.filename = voiceName
+        voice.language = "en"
         do {
             try self.viewContext.save()
         } catch {
             print(error)
         }
-        listViewDelegate.refreshList()
     }
     
     func deleteVoice(voice: Voice) {
+        
+        defer {updateUI()}
+        
         viewContext.delete(voice)
         do {
             try viewContext.save()
         } catch {
             print(error)
         }
+        
+    }
+    
+    func updateUI () {
         listViewDelegate.refreshList()
     }
+    
+    
 }
 
 

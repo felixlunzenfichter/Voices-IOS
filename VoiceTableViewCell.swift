@@ -12,7 +12,10 @@ import AVFoundation
 class VoiceTableViewCell: UITableViewCell{
     
     // MARK: - Properties
+
+    @IBOutlet var date: UILabel!
     @IBOutlet var title: UILabel!
+    @IBOutlet var language: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

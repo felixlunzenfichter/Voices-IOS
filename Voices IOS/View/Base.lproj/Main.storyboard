@@ -242,23 +242,50 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="98"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swc-lc-WZ4">
-                                            <rect key="frame" x="30" y="26" width="374" height="45"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swc-lc-WZ4">
+                                            <rect key="frame" x="214" y="73" width="200" height="25"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="200" id="YOg-N7-hYR"/>
+                                                <constraint firstAttribute="height" constant="25" id="n6j-rQ-byh"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="transcribe to see text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2a2-gx-zag">
+                                            <rect key="frame" x="20" y="11" width="174" height="76"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eei-kH-2LE">
+                                            <rect key="frame" x="214" y="11" width="200" height="54"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="25" id="gJS-yj-f5T"/>
+                                                <constraint firstAttribute="width" constant="200" id="uXx-ai-VKS"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="swc-lc-WZ4" firstAttribute="top" secondItem="AK5-tO-NcI" secondAttribute="topMargin" constant="15" id="QNO-aS-qvm"/>
-                                        <constraint firstItem="swc-lc-WZ4" firstAttribute="leading" secondItem="AK5-tO-NcI" secondAttribute="leadingMargin" constant="10" id="WMt-mO-Hc0"/>
-                                        <constraint firstItem="swc-lc-WZ4" firstAttribute="trailing" secondItem="AK5-tO-NcI" secondAttribute="trailingMargin" constant="10" id="d87-O9-i5t"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="swc-lc-WZ4" secondAttribute="bottom" constant="16" id="m7S-5S-B4J"/>
+                                        <constraint firstAttribute="trailing" secondItem="swc-lc-WZ4" secondAttribute="trailing" id="1f4-cd-mka"/>
+                                        <constraint firstAttribute="trailing" secondItem="eei-kH-2LE" secondAttribute="trailing" id="CQS-RQ-Cad"/>
+                                        <constraint firstItem="eei-kH-2LE" firstAttribute="top" secondItem="AK5-tO-NcI" secondAttribute="topMargin" id="Cfk-jz-urc"/>
+                                        <constraint firstItem="2a2-gx-zag" firstAttribute="leading" secondItem="AK5-tO-NcI" secondAttribute="leadingMargin" id="JGn-Cb-LED"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="2a2-gx-zag" secondAttribute="bottom" id="Km6-m4-nV5"/>
+                                        <constraint firstItem="swc-lc-WZ4" firstAttribute="top" secondItem="eei-kH-2LE" secondAttribute="bottom" constant="8" symbolic="YES" id="b7W-8y-CJL"/>
+                                        <constraint firstAttribute="bottom" secondItem="swc-lc-WZ4" secondAttribute="bottom" id="eZC-60-n0s"/>
+                                        <constraint firstItem="eei-kH-2LE" firstAttribute="leading" secondItem="2a2-gx-zag" secondAttribute="trailing" constant="20" id="gvl-eS-A8q"/>
+                                        <constraint firstItem="2a2-gx-zag" firstAttribute="top" secondItem="AK5-tO-NcI" secondAttribute="topMargin" id="qjt-V2-Ia3"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="title" destination="swc-lc-WZ4" id="Pf1-52-6WJ"/>
+                                    <outlet property="date" destination="swc-lc-WZ4" id="Hn3-dr-MY5"/>
+                                    <outlet property="language" destination="eei-kH-2LE" id="7h8-Ji-LRT"/>
+                                    <outlet property="title" destination="2a2-gx-zag" id="nJK-SZ-S4E"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

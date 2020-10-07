@@ -93,7 +93,10 @@ extension VoicesTableViewController {
     }
     
     fileprivate func initializeVoiceCell(_ cell: VoiceTableViewCell, _ indexPath: IndexPath) {
-        cell.title.text = voices[indexPath.row].title
+        let voice = voices[indexPath.row]
+        cell.title.text = voice.transcript
+        cell.date.text = voice.title
+        cell.language.text = voice.language
         
     }
 }

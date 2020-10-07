@@ -45,7 +45,8 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate {
 // MARK:- IBActions
 extension RecorderViewController {
     fileprivate func startRecording() {
-        voiceFileName = "\(getCurrentTimeStamp()).m4a"
+        let date : String = getCurrentTimeStamp()
+        voiceFileName = "\(date).m4a"
         let audioFilePath = getVoiceURL(audioFileName: voiceFileName!)
         
         let settings = [
@@ -64,7 +65,7 @@ extension RecorderViewController {
             // not jud
         }
         
-        persistentContainer.saveVoice(voiceName: voiceFileName!)
+        persistentContainer.saveVoice(voiceName: voiceFileName!, date: date)
     }
     
     fileprivate func stopRecording() {
@@ -78,6 +79,7 @@ extension RecorderViewController {
             record()
         } else {
             stopRecording()
+            stop()
         }
     }
     
@@ -95,7 +97,6 @@ extension RecorderViewController {
         if progress >= 1 {
             progressTimer.invalidate()
         }
-        
     }
     
     @objc func stop() {

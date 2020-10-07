@@ -263,15 +263,12 @@ extension ListeningToolViewController: UIPickerViewDataSource, UIPickerViewDeleg
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         voice.language = languages[row]
-        
         do{
             try persistentContainer.viewContext.save()
+            persistentContainer.updateUI()
         } catch {
             print("Error updating lanugage field of voice object in database in didSelectRow function of picker view in listening tool: \(error)")
         }
-        
-        // This method is triggered whenever the user makes a change to the picker selection.
-        // The parameter named row and component represents what was selected.
     }
 }
 
